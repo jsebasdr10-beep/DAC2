@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Despierta al Capital 2026 - Sponsorship</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#111;font-family:Arial,sans-serif}.page{position:relative;max-width:768px;margin:0 auto;background:#fff}.page img{display:block;width:100%;height:auto}.hotspot{position:absolute;display:block;cursor:pointer;border-radius:12px;transition:.2s;background:rgba(255,255,255,0)}.hotspot:hover,.hotspot:focus{background:rgba(255,255,255,.12);outline:3px solid rgba(255,255,255,.75);outline-offset:-3px}.plans .hotspot:hover{background:rgba(255,255,255,.12);outline-color:#fff}.note{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:20;background:#111;color:#fff;padding:10px 16px;border-radius:999px;font-size:13px;box-shadow:0 4px 18px #0007;opacity:0;pointer-events:none;transition:.25s}.note.show{opacity:1}
+/* Page 2 CTA */ #cta-path{left:9.8%;top:79.1%;width:37.3%;height:5.5%}
+/* Page 6 plan price hotspots */ #bronze{left:5.7%;top:83.8%;width:20.5%;height:13.5%}#silver{left:28.9%;top:83.8%;width:20.5%;height:13.5%}#gold{left:52.1%;top:83.8%;width:20.5%;height:13.5%}#platinum{left:75.2%;top:83.8%;width:20.5%;height:13.5%}
+/* Contact page */ #phone{left:7%;top:75%;width:35%;height:7%}#email{left:44%;top:75%;width:48%;height:7%}#website{left:7%;top:82%;width:35%;height:10%}#location{left:44%;top:82%;width:49%;height:10%}
+</style></head><body>
+<div class="page"><img src="assets/sponsor_page-1.png" alt="Despierta al Capital 2026 cover"></div>
+<div class="page"><img src="assets/sponsor_page-2.png" alt="Sponsorship proposal"><a id="cta-path" class="hotspot" href="#packages" aria-label="Be part of the path - view sponsorship packages"></a></div>
+<div class="page"><img src="assets/sponsor_page-3.png" alt="About the event"></div>
+<div class="page"><img src="assets/sponsor_page-4.png" alt="Meet the speakers"></div>
+<div class="page"><img src="assets/sponsor_page-5.png" alt="Why partner with us"></div>
+<div class="page plans" id="packages"><img src="assets/sponsor_page-6.png" alt="Sponsorship packages"><a id="bronze" class="hotspot pay" href="#" data-plan="Bronze - $1,500" aria-label="Choose Bronze Package for $1,500"></a><a id="silver" class="hotspot pay" href="#" data-plan="Silver - $2,500" aria-label="Choose Silver Package for $2,500"></a><a id="gold" class="hotspot pay" href="#" data-plan="Gold - $5,000" aria-label="Choose Gold Package for $5,000"></a><a id="platinum" class="hotspot pay" href="#" data-plan="Platinum - $15,000" aria-label="Choose Platinum Package for $15,000"></a></div>
+<div class="page"><img src="assets/sponsor_page-7.png" alt="The experience"></div>
+<div class="page"><img src="assets/sponsor_page-8.png" alt="Our contact"><a id="phone" class="hotspot" href="tel:+16314010564" aria-label="Call Capital Path"></a><a id="email" class="hotspot" href="mailto:ndiaz@rehobott.com" aria-label="Email Capital Path"></a><a id="website" class="hotspot" href="https://www.rehobott.com/capitalpath" target="_blank" rel="noopener" aria-label="Visit Capital Path website"></a><a id="location" class="hotspot" href="https://www.google.com/maps/search/?api=1&query=New+York+Hall+of+Science" target="_blank" rel="noopener" aria-label="Open New York Hall of Science in maps"></a></div>
+<div class="page"><img src="assets/sponsor_page-9.png" alt="Despierta al Capital, Capital Path and Rehobot"></div>
+<div id="note" class="note">Stripe link pending</div>
+<script>
+// Paste the four Stripe Payment Links below when available.
+const stripeLinks={bronze:'https://buy.stripe.com/fZu3cwb4D41o95l4zBa7C0n',silver:'https://buy.stripe.com/8x25kE0pZ1TggxN6HJa7C0o',gold:'https://buy.stripe.com/3cI28s4Gf1Tg1CTaXZa7C0p',platinum:'https://buy.stripe.com/6oU9AU4Gf1TgftJd67a7C0q'};
+const note=document.getElementById('note');
+document.querySelectorAll('.pay').forEach(a=>a.addEventListener('click',e=>{const url=stripeLinks[a.id];if(url){a.href=url;a.target='_blank';return;}e.preventDefault();note.textContent=a.dataset.plan+' - Stripe link pending';note.classList.add('show');setTimeout(()=>note.classList.remove('show'),2200);}));
+</script></body></html>

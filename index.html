@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Despierta al Capital 2026 · Sponsorship</title>
-<meta name="description" content="Sponsor Despierta al Capital 2026 — a two-day financial education experience for the Latino community. December 12–13, 2026 · New York Hall of Science.">
+<meta name="description" content="Sponsor Despierta al Capital 2026 — a two-day business development and access-to-capital experience. December 12–13, 2026 · New York Hall of Science.">
+<script>try{var L=(location.search.match(/[?&]lang=(en|es)/)||[])[1]||localStorage.getItem('dac-lang')||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en');if(L==='es'){document.documentElement.classList.add('i18n-wait');document.documentElement.lang='es';setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},1500)}}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
@@ -161,7 +162,7 @@ h3{font-size:24px;letter-spacing:.01em}
 .packages-head{text-align:center;max-width:720px;margin:0 auto clamp(50px,6vw,70px)}
 .packages-head .eyebrow{justify-content:center}
 .packages-head .lead{margin:20px auto 0}
-.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
+.tiers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:stretch}
 .tier{--c:var(--red);position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px 26px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
 .tier::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;border-radius:var(--radius) var(--radius) 0 0;background:var(--c)}
 .tier:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
@@ -178,14 +179,14 @@ h3{font-size:24px;letter-spacing:.01em}
 .tier.platinum ul{border-top-color:rgba(255,255,255,.14)}
 .tier li{display:flex;gap:10px}
 .tier li::before{content:"";flex:none;width:18px;height:18px;margin-top:1px;border-radius:50%;background:var(--c) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat}
-.tier .btn{width:100%;background:var(--ink);color:#fff}
+.tier .btn{width:100%;padding:16px 14px;background:var(--ink);color:#fff}
 .tier .btn:hover{background:var(--red)}
 .tier.platinum .btn{background:var(--red)}
 .tier.platinum .btn:hover{background:#fff;color:var(--red)}
 .ribbon{position:absolute;top:-13px;right:20px;background:var(--gold);color:var(--black);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
 .secure{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:30px;font-size:14px;color:var(--muted)}
 .secure svg{width:16px;height:16px}
-@media (max-width:1020px){.tiers{grid-template-columns:1fr 1fr}}
+@media (max-width:1020px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.tiers{grid-template-columns:1fr}.tier.platinum{order:-1}}
 
 /* experience */
@@ -246,6 +247,16 @@ h3{font-size:24px;letter-spacing:.01em}
 .cover{position:relative}
 .cover .lang{position:absolute;top:18px;right:18px;z-index:5;background:rgba(0,0,0,.5);backdrop-filter:blur(8px)}
 .nav-right{display:flex;align-items:center;gap:12px}
+
+.tier .alt{display:block;text-align:center;margin-top:12px;font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.tier .alt:hover{color:var(--red)}
+.tier.platinum .alt{color:rgba(255,255,255,.65)}.tier.platinum .alt:hover{color:#fff}
+.institutional{margin-top:24px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;background:#fff;border:1px solid var(--line);border-left:6px solid var(--red);border-radius:var(--radius);padding:30px 34px}
+.institutional .name{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.institutional h3{font-size:clamp(24px,2.6vw,32px);margin:10px 0 10px}
+.institutional p{margin:0;color:var(--muted);max-width:640px}
+@media (max-width:760px){.institutional{grid-template-columns:1fr}.institutional .btn{white-space:normal;text-align:center}}
+.i18n-wait body{visibility:hidden}
 </style>
 </head>
 <body>
@@ -287,7 +298,7 @@ h3{font-size:24px;letter-spacing:.01em}
     <p class="eyebrow r">Sponsorship Proposal · 2026</p>
     <h1 id="proposal-title" class="r">Sponsorship<span>Proposal</span></h1>
     <div class="rule r"></div>
-    <p class="lead r">Partner with an experience designed to empower the Latino community through credit education, financial strategy, and a clearer path toward capital.</p>
+    <p class="lead r">A business development and access-to-capital experience designed to help entrepreneurs, business owners, and professionals better understand credit, business strategies, and opportunities to access capital.</p>
     <div class="hero-actions r">
       <a href="#packages" class="btn btn-white">Be part of the path <svg><use href="#i-arrow"/></svg></a>
       <a href="#about" class="btn btn-ghost">Discover the event</a>
@@ -313,15 +324,15 @@ h3{font-size:24px;letter-spacing:.01em}
       <div class="about-copy">
         <p class="eyebrow r">About the event</p>
         <h2 id="about-title" class="r">From credit <span class="accent">to capital</span></h2>
-        <p class="r"><strong>Despierta al Capital</strong> is a two-day financial education experience created by <strong>Capital Path</strong> to help the Latino community better understand credit, financial strategy, and the journey toward new opportunities.</p>
-        <p class="r">Through education, expert perspectives, practical conversations, and strategic guidance, attendees will learn to look beyond a credit score and better understand the decisions that shape their financial path.</p>
+        <p class="r"><strong>Despierta al Capital 2026</strong> — A business development and access-to-capital experience designed to help entrepreneurs, business owners, and professionals better understand credit, business strategies, and opportunities to access capital.</p>
+        <p class="r">Over two days, participants will gain practical knowledge, connect with professionals from the financial sector, and discover tools to drive the growth of their projects and businesses.</p>
         <div class="quote r">This is more than a credit event. It is a conversation about what comes next.</div>
       </div>
     </div>
     <div class="facts r">
-      <div class="fact"><b>2 Days</b><span>Of education &amp; strategy</span></div>
+      <div class="fact"><b>2 Days</b><span>Of learning &amp; connections</span></div>
       <div class="fact"><b>Dec 12–13</b><span>2026</span></div>
-      <div class="fact"><b>300</b><span>Qualified prospects</span></div>
+      <div class="fact"><b>300</b><span>Expected attendees</span></div>
       <div class="fact"><b>NYSCI</b><span>Queens, New York</span></div>
     </div>
   </div>
@@ -334,7 +345,7 @@ h3{font-size:24px;letter-spacing:.01em}
       <div>
         <p class="eyebrow r">Despierta al Capital 2026</p>
         <h2 id="speakers-title" class="r">Meet the <span class="accent">speakers</span></h2>
-        <p class="lead r" style="margin-top:24px">Experts and industry leaders sharing knowledge, strategies, and real-world perspectives across credit, business, banking, capital, and financial growth.</p>
+        <p class="lead r" style="margin-top:24px">Experts and industry leaders sharing knowledge, strategies, and real-world perspectives across credit, business, banking, capital, and business growth.</p>
       </div>
       <ul class="pillars r"><li>People</li><li>Ideas</li><li>Opportunities</li><li>Real impact</li></ul>
     </div>
@@ -375,13 +386,13 @@ h3{font-size:24px;letter-spacing:.01em}
     <div class="stats">
       <div class="stat r">
         <div class="num">300</div>
-        <h3>Qualified prospects</h3>
+        <h3>Expected attendees</h3>
         <p>A focused audience with the potential to influence decisions across banking, business, real estate, automotive, credit, and capital.</p>
       </div>
       <div class="stat r">
         <div class="num"><small>Up to</small>6,000</div>
         <h3>People impacted*</h3>
-        <p>Our impact model estimates that each prospect can directly or indirectly influence approximately 15–20 people, extending the conversation far beyond the event itself.</p>
+        <p>Our impact model estimates that each attendee can directly or indirectly influence approximately 15–20 people, extending the conversation far beyond the event itself.</p>
       </div>
     </div>
     <p class="tagline r">Your brand isn't just seen.<br><b>It becomes part of the path to capital.</b></p>
@@ -395,7 +406,7 @@ h3{font-size:24px;letter-spacing:.01em}
     <div class="packages-head">
       <p class="eyebrow r">Sponsorship packages</p>
       <h2 id="packages-title" class="r">Choose your <span class="accent">level</span></h2>
-      <p class="lead r">Four ways to put your brand in front of the people shaping the Latino community's financial future.</p>
+      <p class="lead r">Four ways to put your brand in front of entrepreneurs, business owners, and professionals ready to grow.</p>
     </div>
     <div class="tiers">
       <article class="tier bronze r">
@@ -409,6 +420,7 @@ h3{font-size:24px;letter-spacing:.01em}
           <li>2 VIP passes</li>
         </ul>
         <a class="btn" href="https://buy.stripe.com/fZu3cwb4D41o95l4zBa7C0n" target="_blank" rel="noopener">Choose Bronze <svg><use href="#i-arrow"/></svg></a>
+        <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Bronze%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
       <article class="tier silver r">
         <div class="name">Silver</div>
@@ -421,6 +433,7 @@ h3{font-size:24px;letter-spacing:.01em}
           <li>On-stage brand recognition</li>
         </ul>
         <a class="btn" href="https://buy.stripe.com/8x25kE0pZ1TggxN6HJa7C0o" target="_blank" rel="noopener">Choose Silver <svg><use href="#i-arrow"/></svg></a>
+        <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Silver%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
       <article class="tier gold r">
         <div class="name">Gold</div>
@@ -433,6 +446,7 @@ h3{font-size:24px;letter-spacing:.01em}
           <li>2 branded content pieces</li>
         </ul>
         <a class="btn" href="https://buy.stripe.com/3cI28s4Gf1Tg1CTaXZa7C0p" target="_blank" rel="noopener">Choose Gold <svg><use href="#i-arrow"/></svg></a>
+        <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Gold%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
       <article class="tier platinum r">
         <span class="ribbon">Maximum visibility</span>
@@ -446,9 +460,18 @@ h3{font-size:24px;letter-spacing:.01em}
           <li>Full category exclusivity</li>
         </ul>
         <a class="btn" href="https://buy.stripe.com/6oU9AU4Gf1TgftJd67a7C0q" target="_blank" rel="noopener">Choose Platinum <svg><use href="#i-arrow"/></svg></a>
+        <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Platinum%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
     </div>
-    <p class="secure"><svg><use href="#i-lock"/></svg>Secure checkout powered by Stripe</p>
+    <div class="institutional r">
+      <div>
+        <div class="name">Institutional partnership</div>
+        <h3>Custom sponsorship for institutions</h3>
+        <p>For banks, financial institutions, and organizations looking for a partnership tailored to their goals, with terms negotiated directly with our team.</p>
+      </div>
+      <a class="btn btn-red" href="mailto:ndiaz@rehobott.com?subject=Institutional%20sponsorship%20proposal%20-%20Despierta%20al%20Capital%202026">Request institutional proposal <svg><use href="#i-arrow"/></svg></a>
+    </div>
+    <p class="secure"><svg><use href="#i-lock"/></svg>Pay securely online with Stripe, or contact us to arrange your sponsorship directly.</p>
   </div>
 </section>
 
@@ -523,16 +546,34 @@ h3{font-size:24px;letter-spacing:.01em}
 <script>
 (function(){
 var ES={
+"Despierta al Capital — Business Experience 2026 — From Credit to Capital":"Despierta al Capital — Business Experience 2026 — Del crédito al capital",
+"Despierta al Capital, Capital Path and Rehobot":"Despierta al Capital, Capital Path y Rehobot",
+"A business development and access-to-capital experience designed to help entrepreneurs, business owners, and professionals better understand credit, business strategies, and opportunities to access capital.":"Una experiencia de desarrollo empresarial y acceso al capital diseñada para ayudar a emprendedores, empresarios y profesionales a comprender mejor el crédito, las estrategias empresariales y las oportunidades de acceso al capital.",
+"Over two days, participants will gain practical knowledge, connect with professionals from the financial sector, and discover tools to drive the growth of their projects and businesses.":"Durante dos días, los participantes podrán adquirir conocimientos prácticos, conectar con profesionales del sector financiero y conocer herramientas para impulsar el crecimiento de sus proyectos y negocios.",
+"— A business development and access-to-capital experience designed to help entrepreneurs, business owners, and professionals better understand credit, business strategies, and opportunities to access capital.":"— Una experiencia de desarrollo empresarial y acceso al capital diseñada para ayudar a emprendedores, empresarios y profesionales a comprender mejor el crédito, las estrategias empresariales y las oportunidades de acceso al capital.",
+"Of learning & connections":"De aprendizaje y conexiones",
+"Expected attendees":"Asistentes previstos",
+"Our impact model estimates that each attendee can directly or indirectly influence approximately 15–20 people, extending the conversation far beyond the event itself.":"Nuestro modelo de impacto estima que cada asistente puede influir directa o indirectamente en aproximadamente 15–20 personas, llevando la conversación mucho más allá del evento.",
+"Experts and industry leaders sharing knowledge, strategies, and real-world perspectives across credit, business, banking, capital, and business growth.":"Expertos y líderes de la industria compartiendo conocimiento, estrategias y perspectivas reales sobre crédito, negocios, banca, capital y crecimiento empresarial.",
+"Four ways to put your brand in front of entrepreneurs, business owners, and professionals ready to grow.":"Cuatro maneras de poner tu marca frente a emprendedores, empresarios y profesionales listos para crecer.",
+"Prefer to talk first? Contact us":"¿Prefieres hablar primero? Contáctanos",
+"Institutional partnership":"Patrocinio institucional",
+"Custom sponsorship for institutions":"Patrocinio a la medida para instituciones",
+"For banks, financial institutions, and organizations looking for a partnership tailored to their goals, with terms negotiated directly with our team.":"Para bancos, entidades financieras y organizaciones que buscan una alianza adaptada a sus objetivos, con condiciones negociadas directamente con nuestro equipo.",
+"Request institutional proposal":"Solicitar propuesta institucional",
+"Pay securely online with Stripe, or contact us to arrange your sponsorship directly.":"Paga en línea de forma segura con Stripe, o contáctanos para coordinar tu patrocinio directamente.",
+"mailto:ndiaz@rehobott.com?subject=Bronze%20sponsorship%20-%20Despierta%20al%20Capital%202026":"mailto:ndiaz@rehobott.com?subject=Patrocinio%20Bronce%20-%20Despierta%20al%20Capital%202026",
+"mailto:ndiaz@rehobott.com?subject=Silver%20sponsorship%20-%20Despierta%20al%20Capital%202026":"mailto:ndiaz@rehobott.com?subject=Patrocinio%20Plata%20-%20Despierta%20al%20Capital%202026",
+"mailto:ndiaz@rehobott.com?subject=Gold%20sponsorship%20-%20Despierta%20al%20Capital%202026":"mailto:ndiaz@rehobott.com?subject=Patrocinio%20Oro%20-%20Despierta%20al%20Capital%202026",
+"mailto:ndiaz@rehobott.com?subject=Platinum%20sponsorship%20-%20Despierta%20al%20Capital%202026":"mailto:ndiaz@rehobott.com?subject=Patrocinio%20Platino%20-%20Despierta%20al%20Capital%202026",
+"mailto:ndiaz@rehobott.com?subject=Institutional%20sponsorship%20proposal%20-%20Despierta%20al%20Capital%202026":"mailto:ndiaz@rehobott.com?subject=Propuesta%20de%20patrocinio%20institucional%20-%20Despierta%20al%20Capital%202026",
 "The Event":"El Evento","Speakers":"Conferencistas","Why Partner":"Por qué patrocinar","Packages":"Paquetes","Contact":"Contacto","Sponsor Now":"Patrocina ya",
 "Sponsorship Proposal · 2026":"Propuesta de patrocinio · 2026","Sponsorship":"Propuesta de","Proposal":"Patrocinio",
-"Partner with an experience designed to empower the Latino community through credit education, financial strategy, and a clearer path toward capital.":"Únete a una experiencia diseñada para empoderar a la comunidad latina a través de la educación crediticia, la estrategia financiera y un camino más claro hacia el capital.",
 "Be part of the path":"Sé parte del camino","Discover the event":"Conoce el evento","December 12–13, 2026":"12–13 de diciembre de 2026","December 2026":"Diciembre 2026",
 "About the event":"Sobre el evento","From credit":"Del crédito","to capital":"al capital",
-"is a two-day financial education experience created by":"es una experiencia de educación financiera de dos días creada por",
-"to help the Latino community better understand credit, financial strategy, and the journey toward new opportunities.":"para ayudar a la comunidad latina a entender mejor el crédito, la estrategia financiera y el camino hacia nuevas oportunidades.",
 "Through education, expert perspectives, practical conversations, and strategic guidance, attendees will learn to look beyond a credit score and better understand the decisions that shape their financial path.":"A través de educación, perspectivas expertas, conversaciones prácticas y orientación estratégica, los asistentes aprenderán a mirar más allá de un puntaje de crédito y a entender mejor las decisiones que moldean su camino financiero.",
 "This is more than a credit event. It is a conversation about what comes next.":"Esto es más que un evento de crédito. Es una conversación sobre lo que viene después.",
-"2 Days":"2 Días","Of education & strategy":"De educación y estrategia","Dec 12–13":"12–13 Dic","Qualified prospects":"Prospectos calificados",
+"2 Days":"2 Días","Dec 12–13":"12–13 Dic","Qualified prospects":"Prospectos calificados",
 "Meet the":"Conoce a los","speakers":"conferencistas",
 "Experts and industry leaders sharing knowledge, strategies, and real-world perspectives across credit, business, banking, capital, and financial growth.":"Expertos y líderes de la industria compartiendo conocimiento, estrategias y perspectivas reales sobre crédito, negocios, banca, capital y crecimiento financiero.",
 "People":"Personas","Opportunities":"Oportunidades","Real impact":"Impacto real",
@@ -574,10 +615,10 @@ var ES={
 "Brooklyn Bridge and the Manhattan skyline":"Puente de Brooklyn y el horizonte de Manhattan","Language":"Idioma","Main":"Principal",
 "Despierta al Capital 2026 · Sponsorship":"Despierta al Capital 2026 · Patrocinio"
 };
-var nodes=[],attrs=[],ATTR=['aria-label','alt'];
+var nodes=[],attrs=[],ATTR=['aria-label','alt','href'];
 var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode.nodeName;return (p==='SCRIPT'||p==='STYLE')?2:(ES[n.nodeValue.trim()]?1:2)}});
 var n;while(n=w.nextNode()){var t=n.nodeValue,k=t.trim(),i=t.indexOf(k);nodes.push({n:n,en:t,es:t.slice(0,i)+ES[k]+t.slice(i+k.length)})}
-document.querySelectorAll('[aria-label],[alt]').forEach(function(el){ATTR.forEach(function(a){var v=el.getAttribute(a);if(v&&ES[v])attrs.push({el:el,a:a,en:v,es:ES[v]})})});
+document.querySelectorAll('[aria-label],[alt],a[href^="mailto:"]').forEach(function(el){ATTR.forEach(function(a){var v=el.getAttribute(a);if(v&&ES[v])attrs.push({el:el,a:a,en:v,es:ES[v]})})});
 var title=document.title;
 function set(l){
   var es=l==='es';document.documentElement.lang=l;document.title=es?ES[title]||title:title;
@@ -589,7 +630,7 @@ function set(l){
 document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang)})});
 var q=(location.search.match(/[?&]lang=(en|es)/)||[])[1],saved=null;try{saved=localStorage.getItem('dac-lang')}catch(e){}
 var lang=q||saved||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en');
-if(lang==='es')set('es');
+if(lang==='es')set('es');document.documentElement.classList.remove('i18n-wait');
 })();
 </script>
 </body>

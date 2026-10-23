@@ -58,7 +58,7 @@ h3{font-size:24px;letter-spacing:.01em}
 /* preserved image pages */
 .cover{background:#000;display:flex;justify-content:center}
 .cover img{width:100%;max-width:760px}
-.closing{background:#fff;display:flex;justify-content:center;padding-bottom:40px}
+.closing{background:#fff;display:flex;justify-content:center;padding-bottom:110px}
 .closing img{width:100%;max-width:760px}
 
 /* top nav */
@@ -308,6 +308,28 @@ html.modal-open{overflow:hidden}
   .m-foot{padding:20px 20px 24px}.m-foot .btn{width:100%}
 }
 @media (max-width:760px){.inst-actions{min-width:0}}
+
+/* legal bar + legal dialogs */
+.closing{flex-direction:column;align-items:center}
+.legal-bar{width:100%;max-width:760px;padding:22px 24px 10px;border-top:1px solid var(--line);text-align:center}
+.legal-bar nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px}
+.legal-bar nav button{all:unset;cursor:pointer;font-size:13px;font-weight:600;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.legal-bar nav button:hover{color:var(--red)}
+.legal-bar nav button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.legal-bar p{margin:14px 0 0;font-size:12px;color:var(--muted);line-height:1.5}
+.m-body{padding:8px 30px 30px;font-size:15px;line-height:1.6;color:var(--muted)}
+.m-body h4{margin:22px 0 8px;font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.m-body p{margin:12px 0}
+.m-body ul{margin:8px 0;padding:0;list-style:none;display:grid;gap:10px}
+.m-body li{display:flex;gap:12px}
+.m-body li::before{content:"";flex:none;width:7px;height:7px;margin-top:9px;border-radius:50%;background:var(--red)}
+.m-body a{color:var(--red);font-weight:600}
+.m-dl{margin:16px 0;display:grid;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.m-dl dt{font-weight:800;color:var(--ink);padding:14px 18px 2px;background:var(--paper)}
+.m-dl dd{margin:0;padding:2px 18px 14px;background:var(--paper);border-bottom:1px solid var(--line)}
+.m-dl dd:last-child{border-bottom:0}
+.linkish{all:unset;cursor:pointer;color:var(--red);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:560px){.m-body{padding:4px 20px 24px}}
 </style>
 </head>
 <body>
@@ -578,6 +600,10 @@ html.modal-open{overflow:hidden}
 <!-- 9 · CLOSING (original image, unchanged) -->
 <footer class="closing">
   <img src="assets/sponsor_page-9.png" alt="Despierta al Capital, Capital Path and Rehobot" width="1191" height="1685">
+  <div class="legal-bar">
+    <nav aria-label="Legal"><button type="button" data-open="d-organizer" aria-haspopup="dialog">Organizer information</button><button type="button" data-open="d-privacy" aria-haspopup="dialog">Privacy &amp; data</button><button type="button" data-open="d-terms" aria-haspopup="dialog">Sponsorship terms</button><button type="button" data-open="d-disclaimer" aria-haspopup="dialog">Important notice</button></nav>
+    <p>© 2026 Rehobot Strategy Corp. Despierta al Capital is a business experience by Capital Path, a Rehobot Strategy Corp. service.</p>
+  </div>
 </footer>
 
 <dialog class="pkg-modal bronze" id="d-bronze" aria-labelledby="d-bronze-t">
@@ -642,11 +668,41 @@ html.modal-open{overflow:hidden}
     <button type="button" class="m-close" aria-label="Close" data-close>&times;</button>
   </div>
   <p class="m-lead">For banks, financial institutions, and organizations. Combine these options to fit your institution's goals:</p>
-  <ul class="m-list"><li>Naming of a program block or day (for example, “Day 2 · Activate, with [Your Institution]”).</li><li>Your own panel or talk on products for entrepreneurs, reviewed by the event team.</li><li>A service desk or booth to open accounts or review applications on site.</li><li>Contact list of attendees who give their consent.</li><li>Formal invoicing, purchase orders, and payment by bank transfer.</li></ul>
+  <ul class="m-list"><li>Naming of a program block or day (for example, “Day 2 · Activate, with [Your Institution]”).</li><li>Your own panel or talk on products for entrepreneurs, reviewed by the event team.</li><li>A service desk or booth to open accounts or review applications on site.</li><li>Contacts of attendees who explicitly agree to share their details with your institution, collected and protected as described in our privacy policy.</li><li>Formal invoicing, purchase orders, and payment by bank transfer.</li></ul>
   <p class="m-note">Pricing is quoted in the proposal.</p>
+  <p class="m-note"><button type="button" class="linkish" data-open="d-privacy">How attendee consent and data protection work →</button></p>
   <div class="m-foot">
     <a class="btn btn-red" href="mailto:ndiaz@rehobott.com?subject=Institutional%20sponsorship%20proposal%20-%20Despierta%20al%20Capital%202026">Request institutional proposal <svg><use href="#i-arrow"/></svg></a>
   </div>
+</dialog>
+
+<dialog class="pkg-modal legal-m" id="d-organizer" aria-labelledby="d-organizer-t">
+  <div class="m-head">
+    <div><div class="name">Legal</div><h3 id="d-organizer-t">Organizer information</h3></div>
+    <button type="button" class="m-close" aria-label="Close" data-close>&times;</button>
+  </div>
+  <div class="m-body"><h4>Who organizes the event</h4><p>Despierta al Capital 2026 is organized by Rehobot Strategy Corp., the legal entity responsible for the event.</p><dl class="m-dl"><dt>Rehobot Strategy Corp.</dt><dd>The company. It organizes the event, signs sponsorship agreements, and receives all sponsorship payments.</dd><dt>Capital Path</dt><dd>A product and service of Rehobot Strategy Corp. focused on credit, business, and access to capital.</dd><dt>Despierta al Capital</dt><dd>The business experience produced by Rehobot Strategy Corp. through Capital Path.</dd></dl><h4>Contact</h4><p>Email: <a href="mailto:ndiaz@rehobott.com">ndiaz@rehobott.com</a><br>Phone: <a href="tel:+16314010564">+1 (631) 401-0564</a><br>Website: <a href="https://www.rehobott.com/capitalpath" target="_blank" rel="noopener">rehobott.com/capitalpath</a></p></div>
+</dialog>
+<dialog class="pkg-modal legal-m" id="d-privacy" aria-labelledby="d-privacy-t">
+  <div class="m-head">
+    <div><div class="name">Legal</div><h3 id="d-privacy-t">Privacy &amp; attendee data</h3></div>
+    <button type="button" class="m-close" aria-label="Close" data-close>&times;</button>
+  </div>
+  <div class="m-body"><p>Rehobot Strategy Corp. is responsible for the personal data collected for Despierta al Capital 2026.</p><h4>What we collect</h4><p>At registration: name, email, phone, and company or profession. We use this data to manage your attendance and send event information.</p><h4>How consent is collected</h4><ul><li>We only share an attendee's contact details with a sponsor if that attendee gives explicit consent.</li><li>Consent is requested through a separate, optional checkbox at registration or at the sponsor's booth, naming the sponsor that will receive the data.</li><li>The checkbox is never pre-selected, and declining does not affect access to the event.</li></ul><h4>How data is protected</h4><ul><li>Data is stored in systems with restricted access, limited to the organizing team.</li><li>Sponsors receive only the contacts of attendees who consented, through a secure channel, and only for that sponsor.</li><li>Sponsors must use the data only to follow up on their own offering, may not sell or share it, and must honor any unsubscribe request.</li><li>We keep attendee data for up to 12 months after the event and then delete it, unless the attendee agrees otherwise.</li></ul><h4>Your rights</h4><p>You can request access to, correction, or deletion of your data, or withdraw your consent at any time, by writing to <a href="mailto:ndiaz@rehobott.com">ndiaz@rehobott.com</a>.</p></div>
+</dialog>
+<dialog class="pkg-modal legal-m" id="d-terms" aria-labelledby="d-terms-t">
+  <div class="m-head">
+    <div><div class="name">Legal</div><h3 id="d-terms-t">Sponsorship terms</h3></div>
+    <button type="button" class="m-close" aria-label="Close" data-close>&times;</button>
+  </div>
+  <div class="m-body"><ul><li>Sponsorships are contracted with Rehobot Strategy Corp., which signs the agreement and issues the receipt or invoice.</li><li>Payment can be made online through Stripe or, by agreement, by invoice and bank transfer.</li><li>Each package includes the benefits listed under “What's included.” Any custom benefit must be confirmed in writing.</li><li>Logos and brand materials must be delivered by the deadline set by the organizing team to appear in printed materials.</li><li>Content presented by sponsors on stage or in panels is reviewed in advance by the organizing team.</li><li>Cancellation, refund, and force-majeure conditions are set out in each sponsorship agreement.</li></ul></div>
+</dialog>
+<dialog class="pkg-modal legal-m" id="d-disclaimer" aria-labelledby="d-disclaimer-t">
+  <div class="m-head">
+    <div><div class="name">Legal</div><h3 id="d-disclaimer-t">Important notice</h3></div>
+    <button type="button" class="m-close" aria-label="Close" data-close>&times;</button>
+  </div>
+  <div class="m-body"><p>Despierta al Capital is a business development and networking experience. Its content is general and for informational purposes only.</p><p>Nothing presented at the event or on this site is financial, investment, tax, or legal advice. Speakers share their own experience and views.</p><p>Before making financial decisions, consult a licensed professional. Audience and reach figures on this site are estimates, not guaranteed results.</p></div>
 </dialog>
 
 <div class="fab" id="fab">
@@ -671,6 +727,47 @@ html.modal-open{overflow:hidden}
 <script>
 (function(){
 var ES={
+"Legal":"Legal",
+"Organizer information":"Información del organizador",
+"Who organizes the event":"Quién organiza el evento",
+"Despierta al Capital 2026 is organized by Rehobot Strategy Corp., the legal entity responsible for the event.":"Despierta al Capital 2026 es organizado por Rehobot Strategy Corp., la entidad legal responsable del evento.",
+"The company. It organizes the event, signs sponsorship agreements, and receives all sponsorship payments.":"La empresa. Organiza el evento, firma los acuerdos de patrocinio y recibe todos los pagos de patrocinio.",
+"A product and service of Rehobot Strategy Corp. focused on credit, business, and access to capital.":"Un producto y servicio de Rehobot Strategy Corp. enfocado en crédito, negocios y acceso al capital.",
+"The business experience produced by Rehobot Strategy Corp. through Capital Path.":"El business experience producido por Rehobot Strategy Corp. a través de Capital Path.",
+"Contact":"Contacto",
+"Email:":"Correo:",
+"Phone:":"Teléfono:",
+"Website:":"Sitio web:",
+"Privacy & attendee data":"Privacidad y datos de asistentes",
+"Rehobot Strategy Corp. is responsible for the personal data collected for Despierta al Capital 2026.":"Rehobot Strategy Corp. es responsable de los datos personales recogidos para Despierta al Capital 2026.",
+"What we collect":"Qué datos recogemos",
+"At registration: name, email, phone, and company or profession. We use this data to manage your attendance and send event information.":"Al registrarte: nombre, correo, teléfono y empresa o profesión. Usamos estos datos para gestionar tu asistencia y enviarte información del evento.",
+"How consent is collected":"Cómo se recoge el consentimiento",
+"We only share an attendee's contact details with a sponsor if that attendee gives explicit consent.":"Solo compartimos los datos de contacto de un asistente con un patrocinador si ese asistente da su consentimiento explícito.",
+"Consent is requested through a separate, optional checkbox at registration or at the sponsor's booth, naming the sponsor that will receive the data.":"El consentimiento se pide con una casilla aparte y opcional al registrarse o en el stand del patrocinador, indicando qué patrocinador recibirá los datos.",
+"The checkbox is never pre-selected, and declining does not affect access to the event.":"La casilla nunca viene marcada y no aceptar no afecta el acceso al evento.",
+"How data is protected":"Cómo protegemos los datos",
+"Data is stored in systems with restricted access, limited to the organizing team.":"Los datos se guardan en sistemas de acceso restringido, limitado al equipo organizador.",
+"Sponsors receive only the contacts of attendees who consented, through a secure channel, and only for that sponsor.":"Los patrocinadores reciben solo los contactos de quienes dieron su consentimiento, por un canal seguro y únicamente para ese patrocinador.",
+"Sponsors must use the data only to follow up on their own offering, may not sell or share it, and must honor any unsubscribe request.":"Los patrocinadores solo pueden usar los datos para dar seguimiento a su propia oferta, no pueden venderlos ni compartirlos y deben respetar cualquier solicitud de baja.",
+"We keep attendee data for up to 12 months after the event and then delete it, unless the attendee agrees otherwise.":"Conservamos los datos de los asistentes hasta 12 meses después del evento y luego los eliminamos, salvo que el asistente acepte otra cosa.",
+"Your rights":"Tus derechos",
+"You can request access to, correction, or deletion of your data, or withdraw your consent at any time, by writing to":"Puedes pedir acceso, corrección o eliminación de tus datos, o retirar tu consentimiento en cualquier momento, escribiendo a",
+"Sponsorship terms":"Términos de patrocinio",
+"Sponsorships are contracted with Rehobot Strategy Corp., which signs the agreement and issues the receipt or invoice.":"Los patrocinios se contratan con Rehobot Strategy Corp., que firma el acuerdo y emite el recibo o factura.",
+"Payment can be made online through Stripe or, by agreement, by invoice and bank transfer.":"El pago puede hacerse en línea a través de Stripe o, por acuerdo, con factura y transferencia bancaria.",
+"Each package includes the benefits listed under “What's included.” Any custom benefit must be confirmed in writing.":"Cada paquete incluye los beneficios indicados en “Qué incluye”. Cualquier beneficio adicional debe confirmarse por escrito.",
+"Logos and brand materials must be delivered by the deadline set by the organizing team to appear in printed materials.":"Los logos y materiales de marca deben entregarse en la fecha que indique el equipo organizador para aparecer en los materiales impresos.",
+"Content presented by sponsors on stage or in panels is reviewed in advance by the organizing team.":"El contenido que los patrocinadores presenten en el escenario o en paneles se revisa previamente con el equipo organizador.",
+"Cancellation, refund, and force-majeure conditions are set out in each sponsorship agreement.":"Las condiciones de cancelación, reembolso y fuerza mayor se establecen en cada acuerdo de patrocinio.",
+"Important notice":"Aviso importante",
+"Despierta al Capital is a business development and networking experience. Its content is general and for informational purposes only.":"Despierta al Capital es una experiencia de desarrollo empresarial y networking. Su contenido es general y solo tiene fines informativos.",
+"Nothing presented at the event or on this site is financial, investment, tax, or legal advice. Speakers share their own experience and views.":"Nada de lo presentado en el evento o en este sitio constituye asesoría financiera, de inversión, fiscal ni legal. Los conferencistas comparten su propia experiencia y opinión.",
+"Before making financial decisions, consult a licensed professional. Audience and reach figures on this site are estimates, not guaranteed results.":"Antes de tomar decisiones financieras, consulta a un profesional con licencia. Las cifras de audiencia y alcance de este sitio son estimaciones, no resultados garantizados.",
+"Privacy & data":"Privacidad y datos",
+"© 2026 Rehobot Strategy Corp. Despierta al Capital is a business experience by Capital Path, a Rehobot Strategy Corp. service.":"© 2026 Rehobot Strategy Corp. Despierta al Capital es un business experience de Capital Path, un servicio de Rehobot Strategy Corp.",
+"Contacts of attendees who explicitly agree to share their details with your institution, collected and protected as described in our privacy policy.":"Contactos de los asistentes que acepten expresamente compartir sus datos con tu entidad, recogidos y protegidos según nuestra política de privacidad.",
+"How attendee consent and data protection work →":"Cómo funcionan el consentimiento y la protección de datos →",
 "Each VIP pass includes access to both days, preferred seating, the VIP networking area, refreshments, and event materials. One person per pass.":"Cada pase VIP incluye acceso a los dos días, asiento preferencial, área de networking VIP, refrigerios y materiales del evento. Una persona por pase.",
 "Social media mentions are published on the Despierta al Capital and Capital Path Instagram and Facebook accounts, with your logo and tag.":"Las menciones se publican en las cuentas de Instagram y Facebook de Despierta al Capital y Capital Path, con tu logo y etiqueta.",
 "What's included":"Qué incluye",
@@ -696,7 +793,6 @@ var ES={
 "Naming of a program block or day (for example, “Day 2 · Activate, with [Your Institution]”).":"Nombramiento de un bloque o día del programa (por ejemplo, “Día 2 · Activar, con [Tu entidad]”).",
 "Your own panel or talk on products for entrepreneurs, reviewed by the event team.":"Panel o charla propia sobre productos para emprendedores, revisada por el equipo del evento.",
 "A service desk or booth to open accounts or review applications on site.":"Stand o mesa de atención para abrir cuentas o evaluar solicitudes en el lugar.",
-"Contact list of attendees who give their consent.":"Base de contactos de los asistentes que den su consentimiento.",
 "Formal invoicing, purchase orders, and payment by bank transfer.":"Facturación formal, orden de compra y pago por transferencia bancaria.",
 "For banks, financial institutions, and organizations. Combine these options to fit your institution's goals:":"Para bancos, entidades financieras y organizaciones. Combina estas opciones según los objetivos de tu entidad:",
 "Pricing is quoted in the proposal.":"El precio se cotiza en la propuesta.",
@@ -792,13 +888,13 @@ if(lang==='es')set('es');document.documentElement.classList.remove('i18n-wait');
   var last=null;
   function close(d){if(d.open)d.close()}
   document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){
-    var d=document.getElementById(b.dataset.open);if(!d)return;last=b;
+    var d=document.getElementById(b.dataset.open);if(!d)return;var o=b.closest('dialog');if(o){o.close()}else{last=b}
     if(typeof d.showModal==='function'){d.showModal()}else{d.setAttribute('open','')}
     document.documentElement.classList.add('modal-open');
   })});
   document.querySelectorAll('dialog.pkg-modal').forEach(function(d){
     d.addEventListener('click',function(e){if(e.target===d||e.target.closest('[data-close]'))close(d)});
-    d.addEventListener('close',function(){document.documentElement.classList.remove('modal-open');if(last)last.focus()});
+    d.addEventListener('close',function(){if(!document.querySelector('dialog[open]')){document.documentElement.classList.remove('modal-open');if(last)last.focus()}});
   });
 })();
 </script>

@@ -1,24 +1,514 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Despierta al Capital 2026 - Sponsorship</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Despierta al Capital 2026 · Sponsorship</title>
+<meta name="description" content="Sponsor Despierta al Capital 2026 — a two-day financial education experience for the Latino community. December 12–13, 2026 · New York Hall of Science.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#111;font-family:Arial,sans-serif}.page{position:relative;max-width:768px;margin:0 auto;background:#fff}.page img{display:block;width:100%;height:auto}.hotspot{position:absolute;display:block;cursor:pointer;border-radius:12px;transition:.2s;background:rgba(255,255,255,0)}.hotspot:hover,.hotspot:focus{background:rgba(255,255,255,.12);outline:3px solid rgba(255,255,255,.75);outline-offset:-3px}.plans .hotspot:hover{background:rgba(255,255,255,.12);outline-color:#fff}.note{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:20;background:#111;color:#fff;padding:10px 16px;border-radius:999px;font-size:13px;box-shadow:0 4px 18px #0007;opacity:0;pointer-events:none;transition:.25s}.note.show{opacity:1}
-/* Page 2 CTA */ #cta-path{left:9.8%;top:79.1%;width:37.3%;height:5.5%}
-/* Page 6 plan price hotspots */ #bronze{left:5.7%;top:83.8%;width:20.5%;height:13.5%}#silver{left:28.9%;top:83.8%;width:20.5%;height:13.5%}#gold{left:52.1%;top:83.8%;width:20.5%;height:13.5%}#platinum{left:75.2%;top:83.8%;width:20.5%;height:13.5%}
-/* Contact page */ #phone{left:7%;top:75%;width:35%;height:7%}#email{left:44%;top:75%;width:48%;height:7%}#website{left:7%;top:82%;width:35%;height:10%}#location{left:44%;top:82%;width:49%;height:10%}
-</style></head><body>
-<div class="page"><img src="assets/sponsor_page-1.png" alt="Despierta al Capital 2026 cover"></div>
-<div class="page"><img src="assets/sponsor_page-2.png" alt="Sponsorship proposal"><a id="cta-path" class="hotspot" href="#packages" aria-label="Be part of the path - view sponsorship packages"></a></div>
-<div class="page"><img src="assets/sponsor_page-3.png" alt="About the event"></div>
-<div class="page"><img src="assets/sponsor_page-4.png" alt="Meet the speakers"></div>
-<div class="page"><img src="assets/sponsor_page-5.png" alt="Why partner with us"></div>
-<div class="page plans" id="packages"><img src="assets/sponsor_page-6.png" alt="Sponsorship packages"><a id="bronze" class="hotspot pay" href="#" data-plan="Bronze - $1,500" aria-label="Choose Bronze Package for $1,500"></a><a id="silver" class="hotspot pay" href="#" data-plan="Silver - $2,500" aria-label="Choose Silver Package for $2,500"></a><a id="gold" class="hotspot pay" href="#" data-plan="Gold - $5,000" aria-label="Choose Gold Package for $5,000"></a><a id="platinum" class="hotspot pay" href="#" data-plan="Platinum - $15,000" aria-label="Choose Platinum Package for $15,000"></a></div>
-<div class="page"><img src="assets/sponsor_page-7.png" alt="The experience"></div>
-<div class="page"><img src="assets/sponsor_page-8.png" alt="Our contact"><a id="phone" class="hotspot" href="tel:+16314010564" aria-label="Call Capital Path"></a><a id="email" class="hotspot" href="mailto:ndiaz@rehobott.com" aria-label="Email Capital Path"></a><a id="website" class="hotspot" href="https://www.rehobott.com/capitalpath" target="_blank" rel="noopener" aria-label="Visit Capital Path website"></a><a id="location" class="hotspot" href="https://www.google.com/maps/search/?api=1&query=New+York+Hall+of+Science" target="_blank" rel="noopener" aria-label="Open New York Hall of Science in maps"></a></div>
-<div class="page"><img src="assets/sponsor_page-9.png" alt="Despierta al Capital, Capital Path and Rehobot"></div>
-<div id="note" class="note">Stripe link pending</div>
+:root{
+  --red:#AD151F; --red-deep:#7E0A10;
+  --black:#0B0B0C; --ink:#17171A; --muted:#5E5E66; --line:#E6E3E1;
+  --paper:#FAF8F6; --gold:#E2B04A;
+  --bronze:#B8662C; --silver:#8E97A3; --platinum:#1B1B1F;
+  --radius:18px; --wrap:1120px;
+  --shadow:0 18px 50px -18px rgba(20,0,2,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:"Archivo",system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+section{position:relative}
+
+/* type scale — one family, one system */
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px;margin:0 0 18px}
+.eyebrow::before{content:"";width:34px;height:3px;background:currentColor;border-radius:2px}
+.on-red .eyebrow,.on-dark .eyebrow{color:var(--gold)}
+h1,h2,h3{font-stretch:88%;font-weight:850;line-height:.98;letter-spacing:-.01em;margin:0;text-transform:uppercase}
+h2{font-size:clamp(40px,6.4vw,76px)}
+h2 .accent{color:var(--red)}
+.on-red h2 .accent,.on-dark h2 .accent{color:var(--gold)}
+h3{font-size:24px;letter-spacing:.01em}
+.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:var(--muted);max-width:620px}
+.on-red .lead,.on-dark .lead{color:rgba(255,255,255,.82)}
+.on-red,.on-dark{color:#fff}
+.on-red{background:var(--red)}
+.on-dark{background:var(--black)}
+.pad{padding:clamp(80px,10vw,130px) 0}
+
+/* buttons */
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font:inherit;font-weight:750;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .2s}
+.btn:hover svg{transform:translateX(3px)}
+.btn:hover{transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--red)}
+.btn-white:hover{box-shadow:0 12px 30px -10px rgba(0,0,0,.45)}
+.btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep);box-shadow:0 12px 30px -10px rgba(173,21,31,.6)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* preserved image pages */
+.cover{background:#000;display:flex;justify-content:center}
+.cover img{width:100%;max-width:760px}
+.closing{background:#fff;display:flex;justify-content:center;padding-bottom:40px}
+.closing img{width:100%;max-width:760px}
+
+/* top nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;background:rgba(11,11,12,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid rgba(255,255,255,.08);transform:translateY(-100%);transition:transform .35s ease}
+.nav.show{transform:none}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+.brand{font-stretch:88%;font-weight:850;text-transform:uppercase;color:#fff;text-decoration:none;letter-spacing:.02em;font-size:18px;white-space:nowrap}
+.brand b{color:#E8333B}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.04em;transition:color .2s}
+.nav ul a:hover{color:#fff}
+.nav .btn{padding:10px 18px;font-size:13px}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* hero / proposal */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;min-height:min(92vh,860px);background:var(--red)}
+.hero-copy{padding:clamp(70px,9vw,120px) clamp(24px,6vw,80px);display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(42px,8vw,104px);margin-bottom:28px}
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:2px #fff}
+.hero .rule{width:3px;height:70px;background:rgba(255,255,255,.6);margin:0 0 30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.22);font-size:15px;color:rgba(255,255,255,.85)}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+.hero-meta svg{width:18px;height:18px;color:var(--gold)}
+.hero-photo{position:relative;background:url(assets/hero-empire.jpg) center/cover no-repeat}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--red) 0,rgba(173,21,31,0) 22%)}
+.date-chip{position:absolute;top:28px;right:28px;z-index:1;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);color:#fff;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+@media (max-width:860px){.hero{grid-template-columns:minmax(0,1fr)}.hero-photo{min-height:420px;order:-1}.hero-photo::after{background:linear-gradient(0deg,var(--red) 0,rgba(173,21,31,0) 35%)}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+.about-media{position:relative;padding-bottom:70px}
+.about-media .big{border-radius:var(--radius) 160px var(--radius) var(--radius);width:88%;aspect-ratio:1/1;object-fit:cover;box-shadow:var(--shadow)}
+.about-media .round{position:absolute;right:0;bottom:0;width:46%;aspect-ratio:1;border-radius:50%;object-fit:cover;border:8px solid var(--paper);box-shadow:var(--shadow)}
+.about-copy p{margin:0 0 18px;color:var(--muted)}
+.about-copy p strong{color:var(--ink)}
+.about-copy h2{margin-bottom:28px}
+.quote{margin-top:30px;padding:22px 26px;border-left:4px solid var(--red);background:#fff;border-radius:0 12px 12px 0;font-weight:700;color:var(--ink);font-size:19px;line-height:1.45}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:clamp(60px,8vw,100px)}
+.fact{background:#fff;padding:28px 24px}
+.fact b{display:block;font-stretch:88%;font-size:34px;font-weight:850;line-height:1;color:var(--red);text-transform:uppercase}
+.fact span{display:block;margin-top:8px;font-size:14px;color:var(--muted);letter-spacing:.02em}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}}
+
+/* speakers */
+.speakers{background:radial-gradient(ellipse 70% 60% at 50% 72%,rgba(173,21,31,.55),transparent 70%),var(--black);overflow:hidden}
+.speakers-head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(60px,8vw,90px)}
+.pillars{list-style:none;margin:0;padding:0 0 0 28px;border-left:2px solid rgba(255,255,255,.18);display:grid;gap:8px;font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.stage{position:relative;display:flex;justify-content:center;align-items:flex-start;padding-top:10px}
+.stage::after{content:"";position:absolute;left:8%;right:8%;bottom:-2px;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent)}
+.ghost{position:relative;z-index:1;width:290px;flex:none;margin:0 -70px;opacity:.9;transform:translateY(40px) scale(.88);transform-origin:top center}
+.ghost .frame{aspect-ratio:4/5;border-radius:var(--radius);background:linear-gradient(180deg,#24242a 0,#121215 100%);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.ghost .frame svg{width:84%;height:auto;fill:#050506;filter:drop-shadow(0 0 22px rgba(173,21,31,.5))}
+.ghost .frame::before{content:"?";position:absolute;top:12%;left:50%;transform:translateX(-50%);font-stretch:88%;font-weight:900;font-size:110px;line-height:1;color:rgba(255,255,255,.07)}
+.ghost .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.07) 48%,transparent 62%);animation:sheen 5s ease-in-out infinite}
+@keyframes sheen{0%,100%{transform:translateX(-60%)}50%{transform:translateX(60%)}}
+.ghost .tag{text-align:center;margin-top:18px}
+.stage>.ghost:first-child .tag{padding-right:70px}.stage>.ghost:last-child .tag{padding-left:70px}
+.ghost .tag b{display:block;font-stretch:88%;font-weight:850;text-transform:uppercase;font-size:20px;letter-spacing:.04em}
+.ghost .tag span{display:block;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.lead-speaker{position:relative;z-index:2;width:340px;flex:none}
+.lead-speaker .frame{border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.14);aspect-ratio:4/5;background:#ccc}
+.lead-speaker .frame img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.badge{position:absolute;top:16px;left:16px;z-index:3;background:var(--red);color:#fff;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;border-radius:999px;box-shadow:0 8px 20px -6px rgba(0,0,0,.6)}
+.lead-speaker .tag{text-align:center;margin-top:22px}
+.lead-speaker .tag b{display:block;font-stretch:88%;font-weight:850;text-transform:uppercase;font-size:28px;line-height:1.05}
+.lead-speaker .tag span{display:block;color:rgba(255,255,255,.75);font-size:15px;margin-top:6px}
+.lead-speaker .tag .topics{margin-top:12px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.reveal-note{text-align:center;margin:clamp(50px,7vw,80px) auto 0;max-width:560px;color:rgba(255,255,255,.7);font-size:16px}
+.reveal-note b{color:#fff}
+@media (max-width:860px){.speakers-head{grid-template-columns:1fr}.pillars{display:none}}
+@media (max-width:640px){
+  .lead-speaker{width:60%}
+  .ghost,.ghost.r.in{width:40%;margin:0 -19%;transform:translateY(26px) scale(.8)}
+  .ghost.r{transform:translateY(46px) scale(.8)}
+  .ghost .tag{display:none!important}
+  .ghost .frame::before{font-size:64px}
+  .lead-speaker .tag b{font-size:24px}
+}
+
+/* why partner */
+.why{background:linear-gradient(160deg,var(--red) 0,var(--red-deep) 100%);overflow:hidden}
+.why::before{content:"";position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:url(assets/skyline-bridge.jpg) center/cover;box-shadow:0 0 0 14px rgba(255,255,255,.95)}
+.why .wrap{position:relative}
+.why-copy{max-width:640px}
+.why-copy h2{margin-bottom:28px}
+.why-copy p{margin:0 0 16px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:clamp(50px,6vw,80px)}
+.stat{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:34px}
+.stat .num{font-stretch:88%;font-weight:900;font-size:clamp(54px,7vw,88px);line-height:.95;letter-spacing:-.02em}
+.stat .num small{font-size:.42em;font-weight:800;vertical-align:.95em;margin-right:6px;letter-spacing:.04em}
+.stat h3{color:var(--gold);font-size:18px;letter-spacing:.14em;margin:14px 0 10px}
+.stat p{margin:0;color:rgba(255,255,255,.8);font-size:15.5px}
+.tagline{margin-top:50px;font-size:15px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;line-height:1.9}
+.tagline b{color:var(--gold);font-weight:800}
+.fineprint{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:18px}
+@media (max-width:860px){.why::before{width:300px;height:300px;right:-130px;top:-130px}.stats{grid-template-columns:1fr}}
+@media (max-width:640px){.why::before{display:none}}
+
+/* packages */
+.packages-head{text-align:center;max-width:720px;margin:0 auto clamp(50px,6vw,70px)}
+.packages-head .eyebrow{justify-content:center}
+.packages-head .lead{margin:20px auto 0}
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
+.tier{--c:var(--red);position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px 26px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+.tier::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;border-radius:var(--radius) var(--radius) 0 0;background:var(--c)}
+.tier:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.tier.bronze{--c:var(--bronze)}.tier.silver{--c:var(--silver)}.tier.gold{--c:var(--gold)}
+.tier.platinum{--c:var(--gold);background:var(--platinum);color:#fff;border-color:var(--platinum);box-shadow:var(--shadow)}
+.tier .name{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--c)}
+.tier.gold .name{color:#B9861D}
+.tier.platinum .name{color:var(--gold)}
+.tier .price{font-stretch:88%;font-weight:900;font-size:50px;line-height:1;margin:14px 0 4px;letter-spacing:-.01em}
+.tier .price sup{font-size:.45em;vertical-align:.9em;margin-right:2px}
+.tier .per{font-size:13px;color:var(--muted);letter-spacing:.04em}
+.tier.platinum .per{color:rgba(255,255,255,.6)}
+.tier ul{list-style:none;margin:24px 0 28px;padding:22px 0 0;border-top:1px solid var(--line);display:grid;gap:12px;align-content:start;font-size:15px;line-height:1.45;flex:1}
+.tier.platinum ul{border-top-color:rgba(255,255,255,.14)}
+.tier li{display:flex;gap:10px}
+.tier li::before{content:"";flex:none;width:18px;height:18px;margin-top:1px;border-radius:50%;background:var(--c) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat}
+.tier .btn{width:100%;background:var(--ink);color:#fff}
+.tier .btn:hover{background:var(--red)}
+.tier.platinum .btn{background:var(--red)}
+.tier.platinum .btn:hover{background:#fff;color:var(--red)}
+.ribbon{position:absolute;top:-13px;right:20px;background:var(--gold);color:var(--black);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.secure{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:30px;font-size:14px;color:var(--muted)}
+.secure svg{width:16px;height:16px}
+@media (max-width:1020px){.tiers{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.tiers{grid-template-columns:1fr}.tier.platinum{order:-1}}
+
+/* experience */
+.exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:clamp(50px,6vw,70px)}
+.day{border-radius:var(--radius);padding:clamp(30px,4vw,44px);position:relative;overflow:hidden}
+.day.d1{background:var(--red);color:#fff}
+.day.d2{background:var(--paper);border:1px solid var(--line)}
+.day .num{position:absolute;right:-6px;bottom:-40px;font-stretch:88%;font-weight:900;font-size:220px;line-height:1;opacity:.1}
+.day .when{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.day h3{font-size:clamp(34px,4vw,46px);margin:10px 0 18px}
+.day.d2 h3{color:var(--red)}
+.day p{margin:0 0 24px;max-width:440px;position:relative}
+.day.d2 p{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.chips span{font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28)}
+.day.d2 .chips span{background:#fff;border-color:var(--line);color:var(--ink)}
+@media (max-width:860px){.exp-grid{grid-template-columns:1fr}}
+
+/* contact */
+.contact{padding-bottom:clamp(80px,10vw,120px)}
+.contact-photo{display:block;width:100%;max-height:560px;object-fit:cover;object-position:center bottom}
+.contact .wrap{margin-top:clamp(50px,7vw,80px)}
+.contact-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:30px;margin-bottom:44px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{display:flex;flex-direction:column;gap:14px;padding:26px;border-radius:var(--radius);background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.16);text-decoration:none;color:#fff;transition:background .2s,transform .2s}
+.card:hover{background:rgba(0,0,0,.32);transform:translateY(-4px)}
+.card .ic{width:46px;height:46px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center}
+.card .ic svg{width:22px;height:22px}
+.card small{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:700}
+.card b{font-size:17px;font-weight:700;overflow-wrap:anywhere;line-height:1.35}
+@media (max-width:960px){.cards{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.cards{grid-template-columns:1fr}}
+
+/* floating actions */
+.fab{position:fixed;right:22px;bottom:22px;z-index:45;display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .3s,transform .3s}
+.fab.show{opacity:1;transform:none;pointer-events:auto}
+.fab .round{width:52px;height:52px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.45);transition:transform .2s;flex:none}
+.fab .round:hover{transform:translateY(-3px)}
+.fab .round svg{width:22px;height:22px}
+.fab .btn{box-shadow:0 14px 34px -10px rgba(173,21,31,.75);padding:16px 24px}
+.fab .pulse{width:9px;height:9px;border-radius:50%;background:#fff;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%,100%{box-shadow:0 0 0 10px rgba(255,255,255,0)}}
+.fab.hide-main .btn{display:none}
+@media (max-width:640px){.fab{left:12px;right:12px;bottom:12px;justify-content:flex-end}.fab .btn{flex:1;padding:16px 14px}.nav .btn{padding:9px 14px}.brand{font-size:16px}}
+
+/* reveal on scroll */
+.r{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.r.in{opacity:1;transform:none}
+.ghost.r{transform:translateY(70px) scale(.88)}
+.ghost.r.in{transform:translateY(40px) scale(.88)}
+@media (prefers-reduced-motion:reduce){.r{opacity:1;transition:none}.ghost .frame::after,.fab .pulse{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-person" viewBox="0 0 200 230"><circle cx="100" cy="74" r="44"/><path d="M100 128c-50 0-86 30-92 102h184c-6-72-42-102-92-102z"/></symbol>
+</svg>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="wrap">
+    <a href="#top" class="brand">Despierta <b>al Capital</b></a>
+    <ul>
+      <li><a href="#about">The Event</a></li>
+      <li><a href="#speakers">Speakers</a></li>
+      <li><a href="#why">Why Partner</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#packages" class="btn btn-red">Sponsor Now</a>
+  </div>
+</nav>
+
+<!-- 1 · COVER (original image, unchanged) -->
+<header class="cover" id="top">
+  <img src="assets/sponsor_page-1.png" alt="Despierta al Capital — Business Experience 2026 — From Credit to Capital" width="1191" height="1685">
+</header>
+
+<!-- 2 · PROPOSAL -->
+<section class="hero on-red" aria-labelledby="proposal-title">
+  <div class="hero-copy">
+    <p class="eyebrow r">Sponsorship Proposal · 2026</p>
+    <h1 id="proposal-title" class="r">Sponsorship<span>Proposal</span></h1>
+    <div class="rule r"></div>
+    <p class="lead r">Partner with an experience designed to empower the Latino community through credit education, financial strategy, and a clearer path toward capital.</p>
+    <div class="hero-actions r">
+      <a href="#packages" class="btn btn-white">Be part of the path <svg><use href="#i-arrow"/></svg></a>
+      <a href="#about" class="btn btn-ghost">Discover the event</a>
+    </div>
+    <div class="hero-meta r">
+      <span><svg><use href="#i-cal"/></svg>December 12–13, 2026</span>
+      <span><svg><use href="#i-pin"/></svg>New York Hall of Science · Queens, NY</span>
+    </div>
+  </div>
+  <div class="hero-photo" role="img" aria-label="Empire State Building at sunset">
+    <span class="date-chip">December 2026</span>
+  </div>
+</section>
+
+<!-- 3 · ABOUT -->
+<section class="pad" id="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-media r">
+        <img class="big" src="assets/night-skyline.jpg" alt="New York skyline at dusk" loading="lazy" width="620" height="620">
+        <img class="round" src="assets/street.jpg" alt="Tree-lined avenue in Manhattan" loading="lazy" width="368" height="368">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow r">About the event</p>
+        <h2 id="about-title" class="r">From credit <span class="accent">to capital</span></h2>
+        <p class="r"><strong>Despierta al Capital</strong> is a two-day financial education experience created by <strong>Capital Path</strong> to help the Latino community better understand credit, financial strategy, and the journey toward new opportunities.</p>
+        <p class="r">Through education, expert perspectives, practical conversations, and strategic guidance, attendees will learn to look beyond a credit score and better understand the decisions that shape their financial path.</p>
+        <div class="quote r">This is more than a credit event. It is a conversation about what comes next.</div>
+      </div>
+    </div>
+    <div class="facts r">
+      <div class="fact"><b>2 Days</b><span>Of education &amp; strategy</span></div>
+      <div class="fact"><b>Dec 12–13</b><span>2026</span></div>
+      <div class="fact"><b>300</b><span>Qualified prospects</span></div>
+      <div class="fact"><b>NYSCI</b><span>Queens, New York</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · SPEAKERS -->
+<section class="speakers on-dark pad" id="speakers" aria-labelledby="speakers-title">
+  <div class="wrap">
+    <div class="speakers-head">
+      <div>
+        <p class="eyebrow r">Despierta al Capital 2026</p>
+        <h2 id="speakers-title" class="r">Meet the <span class="accent">speakers</span></h2>
+        <p class="lead r" style="margin-top:24px">Experts and industry leaders sharing knowledge, strategies, and real-world perspectives across credit, business, banking, capital, and financial growth.</p>
+      </div>
+      <ul class="pillars r"><li>People</li><li>Ideas</li><li>Opportunities</li><li>Real impact</li></ul>
+    </div>
+
+    <div class="stage">
+      <div class="ghost r" role="img" aria-label="Surprise speaker, to be revealed">
+        <div class="frame"><svg viewBox="0 0 200 230" aria-hidden="true"><use href="#i-person"/></svg></div>
+        <div class="tag"><b>Special Guest</b><span>To be revealed</span></div>
+      </div>
+      <article class="lead-speaker r">
+        <span class="badge">Headline Speaker</span>
+        <div class="frame"><img src="assets/gabriel.jpg" alt="Gabriel Solís Moya" loading="lazy" width="330" height="318"></div>
+        <div class="tag">
+          <b>Gabriel<br>Solís Moya</b>
+          <span>Founder &amp; CEO · Rehobot Strategy Corp.</span>
+          <span class="topics">Credit · Strategy · Capital</span>
+        </div>
+      </article>
+      <div class="ghost r" role="img" aria-label="Surprise speaker, to be revealed">
+        <div class="frame"><svg viewBox="0 0 200 230" aria-hidden="true"><use href="#i-person"/></svg></div>
+        <div class="tag"><b>Special Guest</b><span>To be revealed</span></div>
+      </div>
+    </div>
+
+    <p class="reveal-note r"><b>Two days. Different perspectives.</b> Two more voices will join the stage — their identities will be revealed closer to the event.</p>
+  </div>
+</section>
+
+<!-- 5 · WHY PARTNER -->
+<section class="why on-red pad" id="why" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="why-copy">
+      <p class="eyebrow r">Why partner with us</p>
+      <h2 id="why-title" class="r">The power of <span class="accent">one connection</span></h2>
+      <p class="lead r">Despierta al Capital is designed to connect brands with a highly relevant audience of entrepreneurs, professionals, investors, and consumers making real financial decisions.</p>
+      <p class="lead r">Through the event experience and the conversations it generates beyond the venue, sponsors build visibility, credibility, and meaningful connections with the Latino community.</p>
+    </div>
+    <div class="stats">
+      <div class="stat r">
+        <div class="num">300</div>
+        <h3>Qualified prospects</h3>
+        <p>A focused audience with the potential to influence decisions across banking, business, real estate, automotive, credit, and capital.</p>
+      </div>
+      <div class="stat r">
+        <div class="num"><small>Up to</small>6,000</div>
+        <h3>People impacted*</h3>
+        <p>Our impact model estimates that each prospect can directly or indirectly influence approximately 15–20 people, extending the conversation far beyond the event itself.</p>
+      </div>
+    </div>
+    <p class="tagline r">Your brand isn't just seen.<br><b>It becomes part of the path to capital.</b></p>
+    <p class="fineprint">*Projected potential reach based on the event's impact methodology; not a guaranteed audience or commercial result.</p>
+  </div>
+</section>
+
+<!-- 6 · PACKAGES -->
+<section class="packages pad" id="packages" aria-labelledby="packages-title">
+  <div class="wrap">
+    <div class="packages-head">
+      <p class="eyebrow r">Sponsorship packages</p>
+      <h2 id="packages-title" class="r">Choose your <span class="accent">level</span></h2>
+      <p class="lead r">Four ways to put your brand in front of the people shaping the Latino community's financial future.</p>
+    </div>
+    <div class="tiers">
+      <article class="tier bronze r">
+        <div class="name">Bronze</div>
+        <div class="price"><sup>$</sup>1,500</div>
+        <div class="per">Sponsorship investment</div>
+        <ul>
+          <li>On-site brand presence</li>
+          <li>Logo on selected event materials</li>
+          <li>2 social media mentions</li>
+          <li>2 VIP passes</li>
+        </ul>
+        <a class="btn" href="https://buy.stripe.com/fZu3cwb4D41o95l4zBa7C0n" target="_blank" rel="noopener">Choose Bronze <svg><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="tier silver r">
+        <div class="name">Silver</div>
+        <div class="price"><sup>$</sup>2,500</div>
+        <div class="per">Sponsorship investment</div>
+        <ul>
+          <li>Expanded logo placement across event assets</li>
+          <li>4 social media mentions</li>
+          <li>4 VIP passes</li>
+          <li>On-stage brand recognition</li>
+        </ul>
+        <a class="btn" href="https://buy.stripe.com/8x25kE0pZ1TggxN6HJa7C0o" target="_blank" rel="noopener">Choose Silver <svg><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="tier gold r">
+        <div class="name">Gold</div>
+        <div class="price"><sup>$</sup>5,000</div>
+        <div class="per">Sponsorship investment</div>
+        <ul>
+          <li>Premium logo placement</li>
+          <li>8 VIP passes</li>
+          <li>Participation in an event panel</li>
+          <li>2 branded content pieces</li>
+        </ul>
+        <a class="btn" href="https://buy.stripe.com/3cI28s4Gf1Tg1CTaXZa7C0p" target="_blank" rel="noopener">Choose Gold <svg><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="tier platinum r">
+        <span class="ribbon">Maximum visibility</span>
+        <div class="name">Platinum</div>
+        <div class="price"><sup>$</sup>15,000</div>
+        <div class="per">Sponsorship investment</div>
+        <ul>
+          <li>“Presented by” naming recognition for your brand</li>
+          <li>Keynote presence</li>
+          <li>12 VIP passes + B2B agenda</li>
+          <li>Full category exclusivity</li>
+        </ul>
+        <a class="btn" href="https://buy.stripe.com/6oU9AU4Gf1TgftJd67a7C0q" target="_blank" rel="noopener">Choose Platinum <svg><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+    <p class="secure"><svg><use href="#i-lock"/></svg>Secure checkout powered by Stripe</p>
+  </div>
+</section>
+
+<!-- 7 · EXPERIENCE -->
+<section class="pad" id="experience" aria-labelledby="exp-title" style="background:#fff">
+  <div class="wrap">
+    <p class="eyebrow r">The experience</p>
+    <h2 id="exp-title" class="r">Two days. <span class="accent">One path.</span></h2>
+    <div class="exp-grid">
+      <article class="day d1 r">
+        <span class="num" aria-hidden="true">01</span>
+        <div class="when">Day 1 · December 12, 2026</div>
+        <h3>Awaken</h3>
+        <p>The first day is designed to create clarity. Attendees will explore the reality of credit, personal and business financial structure, industry perspectives, and the connections that can influence their path toward capital.</p>
+        <div class="chips"><span>Credit</span><span>Financial Structure</span><span>Industry Insights</span><span>Strategic Connections</span></div>
+      </article>
+      <article class="day d2 r">
+        <span class="num" aria-hidden="true">02</span>
+        <div class="when">Day 2 · December 13, 2026</div>
+        <h3>Activate</h3>
+        <p>The second day moves from understanding to action. Attendees will explore capital and funding, the banking ecosystem, business growth strategies, real-world cases, and the development of a practical action plan.</p>
+        <div class="chips"><span>Capital</span><span>Funding</span><span>Banking</span><span>Business Growth</span><span>Action Plan</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · CONTACT -->
+<section class="contact on-red" id="contact" aria-labelledby="contact-title">
+  <img class="contact-photo" src="assets/contact-bridge.jpg" alt="Brooklyn Bridge and the Manhattan skyline" loading="lazy" width="1191" height="880">
+  <div class="wrap">
+    <div class="contact-head">
+      <div>
+        <p class="eyebrow r">Let's talk</p>
+        <h2 id="contact-title" class="r">Our contact</h2>
+      </div>
+      <a href="#packages" class="btn btn-white r">View packages <svg><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="cards">
+      <a class="card r" href="tel:+16314010564"><span class="ic"><svg><use href="#i-phone"/></svg></span><small>Phone</small><b>+1 (631) 401-0564</b></a>
+      <a class="card r" href="mailto:ndiaz@rehobott.com"><span class="ic"><svg><use href="#i-mail"/></svg></span><small>Email</small><b>ndiaz@rehobott.com</b></a>
+      <a class="card r" href="https://www.rehobott.com/capitalpath" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-globe"/></svg></span><small>Website</small><b>rehobott.com/<wbr>capitalpath</b></a>
+      <a class="card r" href="https://www.google.com/maps/search/?api=1&amp;query=New+York+Hall+of+Science" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-pin"/></svg></span><small>Location</small><b>New York Hall of Science (NYSCI)</b></a>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · CLOSING (original image, unchanged) -->
+<footer class="closing">
+  <img src="assets/sponsor_page-9.png" alt="Despierta al Capital, Capital Path and Rehobot" width="1191" height="1685">
+</footer>
+
+<div class="fab" id="fab">
+  <a class="round" href="tel:+16314010564" aria-label="Call Capital Path"><svg><use href="#i-phone"/></svg></a>
+  <a class="round" href="mailto:ndiaz@rehobott.com" aria-label="Email Capital Path"><svg><use href="#i-mail"/></svg></a>
+  <a class="btn btn-red" href="#packages"><span class="pulse"></span>Become a Sponsor</a>
+</div>
+
 <script>
-// Paste the four Stripe Payment Links below when available.
-const stripeLinks={bronze:'https://buy.stripe.com/fZu3cwb4D41o95l4zBa7C0n',silver:'https://buy.stripe.com/8x25kE0pZ1TggxN6HJa7C0o',gold:'https://buy.stripe.com/3cI28s4Gf1Tg1CTaXZa7C0p',platinum:'https://buy.stripe.com/6oU9AU4Gf1TgftJd67a7C0q'};
-const note=document.getElementById('note');
-document.querySelectorAll('.pay').forEach(a=>a.addEventListener('click',e=>{const url=stripeLinks[a.id];if(url){a.href=url;a.target='_blank';return;}e.preventDefault();note.textContent=a.dataset.plan+' - Stripe link pending';note.classList.add('show');setTimeout(()=>note.classList.remove('show'),2200);}));
-</script></body></html>
+(function(){
+  var nav=document.getElementById('nav'),fab=document.getElementById('fab'),cover=document.getElementById('top'),pk=document.getElementById('packages');
+  function onScroll(){var past=window.scrollY>cover.offsetHeight-80;nav.classList.toggle('show',past);fab.classList.toggle('show',past);}
+  window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);onScroll();
+  var els=document.querySelectorAll('.r');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){fab.classList.toggle('hide-main',e[0].isIntersecting)},{threshold:.15}).observe(pk);
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>

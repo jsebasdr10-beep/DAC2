@@ -30,7 +30,7 @@ section{position:relative}
 .eyebrow::before{content:"";width:34px;height:3px;background:currentColor;border-radius:2px}
 .on-red .eyebrow,.on-dark .eyebrow{color:var(--gold)}
 h1,h2,h3{font-stretch:88%;font-weight:850;line-height:.98;letter-spacing:-.01em;margin:0;text-transform:uppercase}
-h2{font-size:clamp(40px,6.4vw,76px)}
+h2{font-size:clamp(34px,6.4vw,76px)}
 h2 .accent{color:var(--red)}
 .on-red h2 .accent,.on-dark h2 .accent{color:var(--gold)}
 h3{font-size:24px;letter-spacing:.01em}
@@ -121,7 +121,7 @@ h3{font-size:24px;letter-spacing:.01em}
 .lead-speaker{position:relative;z-index:2;width:340px;flex:none}
 .lead-speaker .frame{border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.14);aspect-ratio:4/5;background:#ccc}
 .lead-speaker .frame img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.badge{position:absolute;top:16px;left:16px;z-index:3;background:var(--red);color:#fff;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;border-radius:999px;box-shadow:0 8px 20px -6px rgba(0,0,0,.6)}
+.badge{white-space:nowrap;position:absolute;top:16px;left:16px;z-index:3;background:var(--red);color:#fff;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;border-radius:999px;box-shadow:0 8px 20px -6px rgba(0,0,0,.6)}
 .lead-speaker .tag{text-align:center;margin-top:22px}
 .lead-speaker .tag b{display:block;font-stretch:88%;font-weight:850;text-transform:uppercase;font-size:28px;line-height:1.05}
 .lead-speaker .tag span{display:block;color:rgba(255,255,255,.75);font-size:15px;margin-top:6px}
@@ -237,6 +237,15 @@ h3{font-size:24px;letter-spacing:.01em}
 .ghost.r{transform:translateY(70px) scale(.88)}
 .ghost.r.in{transform:translateY(40px) scale(.88)}
 @media (prefers-reduced-motion:reduce){.r{opacity:1;transition:none}.ghost .frame::after,.fab .pulse{animation:none}html{scroll-behavior:auto}}
+
+/* language toggle */
+.lang{display:inline-flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);gap:2px;flex:none}
+.lang button{all:unset;cursor:pointer;font-size:12px;font-weight:800;letter-spacing:.12em;color:rgba(255,255,255,.75);padding:6px 11px;border-radius:999px;transition:background .2s,color .2s}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--red)}
+.lang button:focus-visible{outline:2px solid var(--gold)}
+.cover{position:relative}
+.cover .lang{position:absolute;top:18px;right:18px;z-index:5;background:rgba(0,0,0,.5);backdrop-filter:blur(8px)}
+.nav-right{display:flex;align-items:center;gap:12px}
 </style>
 </head>
 <body>
@@ -262,12 +271,13 @@ h3{font-size:24px;letter-spacing:.01em}
       <li><a href="#packages">Packages</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#packages" class="btn btn-red">Sponsor Now</a>
+    <div class="nav-right"><div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button></div><a href="#packages" class="btn btn-red">Sponsor Now</a></div>
   </div>
 </nav>
 
 <!-- 1 · COVER (original image, unchanged) -->
 <header class="cover" id="top">
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button></div>
   <img src="assets/sponsor_page-1.png" alt="Despierta al Capital — Business Experience 2026 — From Credit to Capital" width="1191" height="1685">
 </header>
 
@@ -508,6 +518,78 @@ h3{font-size:24px;letter-spacing:.01em}
     var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
     els.forEach(function(el){io.observe(el)});
   }else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+<script>
+(function(){
+var ES={
+"The Event":"El Evento","Speakers":"Conferencistas","Why Partner":"Por qué patrocinar","Packages":"Paquetes","Contact":"Contacto","Sponsor Now":"Patrocina ya",
+"Sponsorship Proposal · 2026":"Propuesta de patrocinio · 2026","Sponsorship":"Propuesta de","Proposal":"Patrocinio",
+"Partner with an experience designed to empower the Latino community through credit education, financial strategy, and a clearer path toward capital.":"Únete a una experiencia diseñada para empoderar a la comunidad latina a través de la educación crediticia, la estrategia financiera y un camino más claro hacia el capital.",
+"Be part of the path":"Sé parte del camino","Discover the event":"Conoce el evento","December 12–13, 2026":"12–13 de diciembre de 2026","December 2026":"Diciembre 2026",
+"About the event":"Sobre el evento","From credit":"Del crédito","to capital":"al capital",
+"is a two-day financial education experience created by":"es una experiencia de educación financiera de dos días creada por",
+"to help the Latino community better understand credit, financial strategy, and the journey toward new opportunities.":"para ayudar a la comunidad latina a entender mejor el crédito, la estrategia financiera y el camino hacia nuevas oportunidades.",
+"Through education, expert perspectives, practical conversations, and strategic guidance, attendees will learn to look beyond a credit score and better understand the decisions that shape their financial path.":"A través de educación, perspectivas expertas, conversaciones prácticas y orientación estratégica, los asistentes aprenderán a mirar más allá de un puntaje de crédito y a entender mejor las decisiones que moldean su camino financiero.",
+"This is more than a credit event. It is a conversation about what comes next.":"Esto es más que un evento de crédito. Es una conversación sobre lo que viene después.",
+"2 Days":"2 Días","Of education & strategy":"De educación y estrategia","Dec 12–13":"12–13 Dic","Qualified prospects":"Prospectos calificados",
+"Meet the":"Conoce a los","speakers":"conferencistas",
+"Experts and industry leaders sharing knowledge, strategies, and real-world perspectives across credit, business, banking, capital, and financial growth.":"Expertos y líderes de la industria compartiendo conocimiento, estrategias y perspectivas reales sobre crédito, negocios, banca, capital y crecimiento financiero.",
+"People":"Personas","Opportunities":"Oportunidades","Real impact":"Impacto real",
+"Special Guest":"Invitado especial","To be revealed":"Por revelar","Headline Speaker":"Conferencista principal",
+"Founder & CEO · Rehobot Strategy Corp.":"Fundador y CEO · Rehobot Strategy Corp.","Credit · Strategy · Capital":"Crédito · Estrategia · Capital",
+"Two days. Different perspectives.":"Dos días. Diferentes perspectivas.",
+"Two more voices will join the stage — their identities will be revealed closer to the event.":"Dos voces más se unirán al escenario; sus identidades se revelarán cerca del evento.",
+"Why partner with us":"¿Por qué patrocinarnos?","The power of":"El poder de","one connection":"una conexión",
+"Despierta al Capital is designed to connect brands with a highly relevant audience of entrepreneurs, professionals, investors, and consumers making real financial decisions.":"Despierta al Capital está diseñado para conectar marcas con una audiencia altamente relevante de emprendedores, profesionales, inversionistas y consumidores que toman decisiones financieras reales.",
+"Through the event experience and the conversations it generates beyond the venue, sponsors build visibility, credibility, and meaningful connections with the Latino community.":"A través de la experiencia del evento y las conversaciones que genera más allá del recinto, los patrocinadores construyen visibilidad, credibilidad y conexiones significativas con la comunidad latina.",
+"A focused audience with the potential to influence decisions across banking, business, real estate, automotive, credit, and capital.":"Una audiencia enfocada con el potencial de influir en decisiones de banca, negocios, bienes raíces, automotriz, crédito y capital.",
+"Up to":"Hasta","People impacted*":"Personas impactadas*",
+"Our impact model estimates that each prospect can directly or indirectly influence approximately 15–20 people, extending the conversation far beyond the event itself.":"Nuestro modelo de impacto estima que cada prospecto puede influir directa o indirectamente en aproximadamente 15–20 personas, llevando la conversación mucho más allá del evento.",
+"Your brand isn't just seen.":"Tu marca no solo se ve.","It becomes part of the path to capital.":"Se convierte en parte del camino al capital.",
+"*Projected potential reach based on the event's impact methodology; not a guaranteed audience or commercial result.":"*Alcance potencial proyectado según la metodología de impacto del evento; no representa una audiencia ni un resultado comercial garantizado.",
+"Sponsorship packages":"Paquetes de patrocinio","Choose your":"Elige tu","level":"nivel",
+"Four ways to put your brand in front of the people shaping the Latino community's financial future.":"Cuatro maneras de poner tu marca frente a las personas que están moldeando el futuro financiero de la comunidad latina.",
+"Bronze":"Bronce","Silver":"Plata","Gold":"Oro","Platinum":"Platino","Sponsorship investment":"Inversión de patrocinio","Maximum visibility":"Máxima visibilidad",
+"On-site brand presence":"Presencia de marca en el evento","Logo on selected event materials":"Logo en materiales seleccionados del evento",
+"2 social media mentions":"2 menciones en redes sociales","2 VIP passes":"2 pases VIP",
+"Expanded logo placement across event assets":"Logo ampliado en los materiales del evento","4 social media mentions":"4 menciones en redes sociales",
+"4 VIP passes":"4 pases VIP","On-stage brand recognition":"Reconocimiento de marca en el escenario",
+"Premium logo placement":"Ubicación premium del logo","8 VIP passes":"8 pases VIP","Participation in an event panel":"Participación en un panel del evento",
+"2 branded content pieces":"2 piezas de contenido de marca","“Presented by” naming recognition for your brand":"Tu marca como “Presentado por” del evento",
+"Keynote presence":"Presencia en la conferencia principal","12 VIP passes + B2B agenda":"12 pases VIP + agenda B2B","Full category exclusivity":"Exclusividad total en tu categoría",
+"Choose Bronze":"Elegir Bronce","Choose Silver":"Elegir Plata","Choose Gold":"Elegir Oro","Choose Platinum":"Elegir Platino",
+"Secure checkout powered by Stripe":"Pago seguro procesado por Stripe",
+"The experience":"La experiencia","Two days.":"Dos días.","One path.":"Un camino.",
+"Day 1 · December 12, 2026":"Día 1 · 12 de diciembre de 2026","Day 2 · December 13, 2026":"Día 2 · 13 de diciembre de 2026",
+"Awaken":"Despertar","Activate":"Activar",
+"The first day is designed to create clarity. Attendees will explore the reality of credit, personal and business financial structure, industry perspectives, and the connections that can influence their path toward capital.":"El primer día está diseñado para crear claridad. Los asistentes explorarán la realidad del crédito, la estructura financiera personal y empresarial, perspectivas de la industria y las conexiones que pueden influir en su camino hacia el capital.",
+"The second day moves from understanding to action. Attendees will explore capital and funding, the banking ecosystem, business growth strategies, real-world cases, and the development of a practical action plan.":"El segundo día pasa del entendimiento a la acción. Los asistentes explorarán capital y financiamiento, el ecosistema bancario, estrategias de crecimiento empresarial, casos reales y el desarrollo de un plan de acción práctico.",
+"Credit":"Crédito","Financial Structure":"Estructura financiera","Industry Insights":"Perspectivas de la industria","Strategic Connections":"Conexiones estratégicas",
+"Funding":"Financiamiento","Banking":"Banca","Business Growth":"Crecimiento empresarial","Action Plan":"Plan de acción",
+"Let's talk":"Hablemos","Our contact":"Contáctanos","View packages":"Ver paquetes","Phone":"Teléfono","Email":"Correo","Website":"Sitio web","Location":"Ubicación",
+"Become a Sponsor":"Hazte patrocinador",
+"Surprise speaker, to be revealed":"Conferencista sorpresa, por revelar","Call Capital Path":"Llamar a Capital Path","Email Capital Path":"Escribir a Capital Path",
+"Empire State Building at sunset":"Empire State al atardecer","New York skyline at dusk":"Horizonte de Nueva York al anochecer","Tree-lined avenue in Manhattan":"Avenida arbolada en Manhattan",
+"Brooklyn Bridge and the Manhattan skyline":"Puente de Brooklyn y el horizonte de Manhattan","Language":"Idioma","Main":"Principal",
+"Despierta al Capital 2026 · Sponsorship":"Despierta al Capital 2026 · Patrocinio"
+};
+var nodes=[],attrs=[],ATTR=['aria-label','alt'];
+var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode.nodeName;return (p==='SCRIPT'||p==='STYLE')?2:(ES[n.nodeValue.trim()]?1:2)}});
+var n;while(n=w.nextNode()){var t=n.nodeValue,k=t.trim(),i=t.indexOf(k);nodes.push({n:n,en:t,es:t.slice(0,i)+ES[k]+t.slice(i+k.length)})}
+document.querySelectorAll('[aria-label],[alt]').forEach(function(el){ATTR.forEach(function(a){var v=el.getAttribute(a);if(v&&ES[v])attrs.push({el:el,a:a,en:v,es:ES[v]})})});
+var title=document.title;
+function set(l){
+  var es=l==='es';document.documentElement.lang=l;document.title=es?ES[title]||title:title;
+  nodes.forEach(function(x){x.n.nodeValue=es?x.es:x.en});
+  attrs.forEach(function(x){x.el.setAttribute(x.a,es?x.es:x.en)});
+  document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l)});
+  try{localStorage.setItem('dac-lang',l)}catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang)})});
+var q=(location.search.match(/[?&]lang=(en|es)/)||[])[1],saved=null;try{saved=localStorage.getItem('dac-lang')}catch(e){}
+var lang=q||saved||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en');
+if(lang==='es')set('es');
 })();
 </script>
 </body>

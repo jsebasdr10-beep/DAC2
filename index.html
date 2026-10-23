@@ -257,6 +257,57 @@ h3{font-size:24px;letter-spacing:.01em}
 .institutional p{margin:0;color:var(--muted);max-width:640px}
 @media (max-width:760px){.institutional{grid-template-columns:1fr}.institutional .btn{white-space:normal;text-align:center}}
 .i18n-wait body{visibility:hidden}
+
+/* details buttons + package dialogs */
+.details{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;padding:12px 14px;border-radius:999px;border:1.5px solid var(--line);font-size:13px;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);transition:border-color .2s,color .2s,background .2s}
+.details span{font-size:17px;line-height:1;font-weight:600}
+.details:hover{border-color:var(--c,var(--red));color:var(--red)}
+.details:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.tier.platinum .details{border-color:rgba(255,255,255,.25);color:#fff}
+.tier.platinum .details:hover{border-color:var(--gold);color:var(--gold)}
+.inst-actions{display:flex;flex-direction:column;gap:0;min-width:280px}
+.inst-actions .details{margin-top:10px}
+.pkg-modal{--c:var(--red);width:min(680px,calc(100% - 24px));max-height:min(88vh,900px);overflow:auto;border:0;border-radius:22px;padding:0;background:#fff;color:var(--ink);box-shadow:0 40px 100px -20px rgba(0,0,0,.6)}
+.pkg-modal.bronze{--c:var(--bronze)}.pkg-modal.silver{--c:var(--silver)}.pkg-modal.gold{--c:var(--gold)}.pkg-modal.platinum{--c:var(--gold)}
+.pkg-modal::backdrop{background:rgba(11,11,12,.62);backdrop-filter:blur(4px)}
+.pkg-modal[open]{animation:pop .28s ease}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.98)}}
+.m-head{position:sticky;top:0;z-index:1;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:28px 30px 22px;background:#fff;border-top:6px solid var(--c);border-bottom:1px solid var(--line)}
+.pkg-modal.platinum .m-head{background:var(--platinum);color:#fff;border-bottom-color:transparent}
+.m-head > div:first-child{flex:1}
+.m-head .name{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--c)}
+.pkg-modal.gold .m-head .name{color:#B9861D}
+.m-head h3{font-size:30px;margin-top:6px}
+.m-head .price{font-stretch:88%;font-weight:900;font-size:36px;line-height:1;margin-top:20px}
+.m-head .price sup{font-size:.45em;vertical-align:.9em}
+.m-close{all:unset;cursor:pointer;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:26px;line-height:1;background:var(--paper);color:var(--ink);flex:none}
+.pkg-modal.platinum .m-close{background:rgba(255,255,255,.12);color:#fff}
+.m-close:hover{background:var(--red);color:#fff}
+.m-close:focus-visible{outline:3px solid var(--gold)}
+.m-table{width:calc(100% - 60px);margin:20px 30px 6px;border-collapse:collapse;font-size:15px;line-height:1.5}
+.m-table thead th{text-align:left;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:0 0 10px}
+.m-table tbody th{text-align:left;vertical-align:top;font-weight:750;width:38%;padding:14px 18px 14px 0;border-top:1px solid var(--line)}
+.m-table tbody td{vertical-align:top;color:var(--muted);padding:14px 0;border-top:1px solid var(--line)}
+.m-lead{margin:22px 30px 6px;color:var(--muted)}
+.m-list{margin:8px 30px 6px;padding:0;list-style:none;display:grid;gap:12px}
+.m-list li{display:flex;gap:12px;font-size:15.5px;line-height:1.5}
+.m-list li::before{content:"";flex:none;width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--red)}
+.m-note{margin:12px 30px 0;padding:12px 16px;border-radius:12px;background:var(--paper);font-size:13.5px;color:var(--muted);line-height:1.5}
+.m-foot{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;padding:24px 30px 30px}
+.m-foot .alt{font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.m-foot .alt:hover{color:var(--red)}
+html.modal-open{overflow:hidden}
+@media (max-width:560px){
+  .m-head{padding:22px 20px 18px}.m-head h3{font-size:24px}.m-head .price{font-size:28px;margin-top:18px}
+  .m-table{width:calc(100% - 40px);margin:16px 20px 4px}
+  .m-table thead{display:none}
+  .m-table tr{display:block;border-top:1px solid var(--line);padding:12px 0}
+  .m-table tbody th,.m-table tbody td{display:block;width:auto;border:0;padding:0}
+  .m-table tbody td{margin-top:4px}
+  .m-lead,.m-list,.m-note{margin-left:20px;margin-right:20px}
+  .m-foot{padding:20px 20px 24px}.m-foot .btn{width:100%}
+}
+@media (max-width:760px){.inst-actions{min-width:0}}
 </style>
 </head>
 <body>
@@ -420,6 +471,7 @@ h3{font-size:24px;letter-spacing:.01em}
           <li>2 VIP passes</li>
         </ul>
         <a class="btn" href="https://buy.stripe.com/fZu3cwb4D41o95l4zBa7C0n" target="_blank" rel="noopener">Choose Bronze <svg><use href="#i-arrow"/></svg></a>
+        <button type="button" class="details" data-open="d-bronze" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
         <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Bronze%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
       <article class="tier silver r">
@@ -433,6 +485,7 @@ h3{font-size:24px;letter-spacing:.01em}
           <li>On-stage brand recognition</li>
         </ul>
         <a class="btn" href="https://buy.stripe.com/8x25kE0pZ1TggxN6HJa7C0o" target="_blank" rel="noopener">Choose Silver <svg><use href="#i-arrow"/></svg></a>
+        <button type="button" class="details" data-open="d-silver" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
         <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Silver%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
       <article class="tier gold r">
@@ -446,6 +499,7 @@ h3{font-size:24px;letter-spacing:.01em}
           <li>2 branded content pieces</li>
         </ul>
         <a class="btn" href="https://buy.stripe.com/3cI28s4Gf1Tg1CTaXZa7C0p" target="_blank" rel="noopener">Choose Gold <svg><use href="#i-arrow"/></svg></a>
+        <button type="button" class="details" data-open="d-gold" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
         <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Gold%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
       <article class="tier platinum r">
@@ -460,6 +514,7 @@ h3{font-size:24px;letter-spacing:.01em}
           <li>Full category exclusivity</li>
         </ul>
         <a class="btn" href="https://buy.stripe.com/6oU9AU4Gf1TgftJd67a7C0q" target="_blank" rel="noopener">Choose Platinum <svg><use href="#i-arrow"/></svg></a>
+        <button type="button" class="details" data-open="d-platinum" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
         <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Platinum%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
     </div>
@@ -469,7 +524,8 @@ h3{font-size:24px;letter-spacing:.01em}
         <h3>Custom sponsorship for institutions</h3>
         <p>For banks, financial institutions, and organizations looking for a partnership tailored to their goals, with terms negotiated directly with our team.</p>
       </div>
-      <a class="btn btn-red" href="mailto:ndiaz@rehobott.com?subject=Institutional%20sponsorship%20proposal%20-%20Despierta%20al%20Capital%202026">Request institutional proposal <svg><use href="#i-arrow"/></svg></a>
+      <div class="inst-actions"><a class="btn btn-red" href="mailto:ndiaz@rehobott.com?subject=Institutional%20sponsorship%20proposal%20-%20Despierta%20al%20Capital%202026">Request institutional proposal <svg><use href="#i-arrow"/></svg></a>
+      <button type="button" class="details" data-open="d-institutional" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button></div>
     </div>
     <p class="secure"><svg><use href="#i-lock"/></svg>Pay securely online with Stripe, or contact us to arrange your sponsorship directly.</p>
   </div>
@@ -524,6 +580,75 @@ h3{font-size:24px;letter-spacing:.01em}
   <img src="assets/sponsor_page-9.png" alt="Despierta al Capital, Capital Path and Rehobot" width="1191" height="1685">
 </footer>
 
+<dialog class="pkg-modal bronze" id="d-bronze" aria-labelledby="d-bronze-t">
+  <div class="m-head">
+    <div><div class="name">Bronze</div><h3 id="d-bronze-t">What's included</h3></div>
+    <div class="price"><sup>$</sup>1,500</div>
+    <button type="button" class="m-close" aria-label="Close" data-close>&times;</button>
+  </div>
+  <table class="m-table"><thead><tr><th scope="col">Benefit</th><th scope="col">What it means</th></tr></thead><tbody><tr><th scope="row">On-site brand presence</th><td>Logo on the sponsor banner at the venue.</td></tr><tr><th scope="row">Logo on selected event materials</th><td>Logo in the sponsors section of the event website.</td></tr><tr><th scope="row">2 social media mentions</th><td>1 welcome post before the event and 1 thank-you post after it.</td></tr><tr><th scope="row">2 VIP passes</th><td>2 VIP passes for both days.</td></tr></tbody></table>
+  <p class="m-note">Each VIP pass includes access to both days, preferred seating, the VIP networking area, refreshments, and event materials. One person per pass.</p>
+  <p class="m-note">Social media mentions are published on the Despierta al Capital and Capital Path Instagram and Facebook accounts, with your logo and tag.</p>
+  <div class="m-foot">
+    <a class="btn btn-red" href="https://buy.stripe.com/fZu3cwb4D41o95l4zBa7C0n" target="_blank" rel="noopener">Choose Bronze <svg><use href="#i-arrow"/></svg></a>
+    <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Bronze%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
+  </div>
+</dialog>
+<dialog class="pkg-modal silver" id="d-silver" aria-labelledby="d-silver-t">
+  <div class="m-head">
+    <div><div class="name">Silver</div><h3 id="d-silver-t">What's included</h3></div>
+    <div class="price"><sup>$</sup>2,500</div>
+    <button type="button" class="m-close" aria-label="Close" data-close>&times;</button>
+  </div>
+  <table class="m-table"><thead><tr><th scope="col">Benefit</th><th scope="col">What it means</th></tr></thead><tbody><tr><th scope="row">Expanded logo placement across event assets</th><td>Venue banner, website, stage screens between sessions, emails to registrants, and the event program.</td></tr><tr><th scope="row">4 social media mentions</th><td>1 welcome post, 2 during the event (one per day), and 1 thank-you post.</td></tr><tr><th scope="row">4 VIP passes</th><td>4 VIP passes for both days.</td></tr><tr><th scope="row">On-stage brand recognition</th><td>Your brand is mentioned by the host at the opening and closing of each day.</td></tr></tbody></table>
+  <p class="m-note">Each VIP pass includes access to both days, preferred seating, the VIP networking area, refreshments, and event materials. One person per pass.</p>
+  <p class="m-note">Social media mentions are published on the Despierta al Capital and Capital Path Instagram and Facebook accounts, with your logo and tag.</p>
+  <div class="m-foot">
+    <a class="btn btn-red" href="https://buy.stripe.com/8x25kE0pZ1TggxN6HJa7C0o" target="_blank" rel="noopener">Choose Silver <svg><use href="#i-arrow"/></svg></a>
+    <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Silver%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
+  </div>
+</dialog>
+<dialog class="pkg-modal gold" id="d-gold" aria-labelledby="d-gold-t">
+  <div class="m-head">
+    <div><div class="name">Gold</div><h3 id="d-gold-t">What's included</h3></div>
+    <div class="price"><sup>$</sup>5,000</div>
+    <button type="button" class="m-close" aria-label="Close" data-close>&times;</button>
+  </div>
+  <table class="m-table"><thead><tr><th scope="col">Benefit</th><th scope="col">What it means</th></tr></thead><tbody><tr><th scope="row">Premium logo placement</th><td>Everything in Silver, at featured size, in the first row of sponsors and on the photo backdrop.</td></tr><tr><th scope="row">8 VIP passes</th><td>8 VIP passes for both days.</td></tr><tr><th scope="row">Participation in an event panel</th><td>A brand representative joins a panel of about 30 minutes; the topic is agreed with the event team.</td></tr><tr><th scope="row">2 branded content pieces</th><td>2 pieces created with your brand (for example, a short video or interview and a carousel), published on the event's social media.</td></tr></tbody></table>
+  <p class="m-note">Each VIP pass includes access to both days, preferred seating, the VIP networking area, refreshments, and event materials. One person per pass.</p>
+  <p class="m-note">Social media mentions are published on the Despierta al Capital and Capital Path Instagram and Facebook accounts, with your logo and tag.</p>
+  <div class="m-foot">
+    <a class="btn btn-red" href="https://buy.stripe.com/3cI28s4Gf1Tg1CTaXZa7C0p" target="_blank" rel="noopener">Choose Gold <svg><use href="#i-arrow"/></svg></a>
+    <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Gold%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
+  </div>
+</dialog>
+<dialog class="pkg-modal platinum" id="d-platinum" aria-labelledby="d-platinum-t">
+  <div class="m-head">
+    <div><div class="name">Platinum</div><h3 id="d-platinum-t">What's included</h3></div>
+    <div class="price"><sup>$</sup>15,000</div>
+    <button type="button" class="m-close" aria-label="Close" data-close>&times;</button>
+  </div>
+  <table class="m-table"><thead><tr><th scope="col">Benefit</th><th scope="col">What it means</th></tr></thead><tbody><tr><th scope="row">“Presented by” naming recognition for your brand</th><td>The event is billed as “Despierta al Capital 2026, presented by [Your Brand]” on the website, main backdrop, screens, and event posts.</td></tr><tr><th scope="row">Keynote presence</th><td>5 minutes of remarks by a brand executive before or after the keynote, plus your logo on screen throughout the session.</td></tr><tr><th scope="row">12 VIP passes + B2B agenda</th><td>12 VIP passes for both days, plus up to 10 private 20-minute meetings with attendees who request them.</td></tr><tr><th scope="row">Full category exclusivity</th><td>No other brand from your industry (for example, another bank, if you are a bank) may sponsor at any level or have a commercial presence at the event. The category is defined at signing.</td></tr></tbody></table>
+  <p class="m-note">Each VIP pass includes access to both days, preferred seating, the VIP networking area, refreshments, and event materials. One person per pass.</p>
+  <p class="m-note">Social media mentions are published on the Despierta al Capital and Capital Path Instagram and Facebook accounts, with your logo and tag.</p>
+  <div class="m-foot">
+    <a class="btn btn-red" href="https://buy.stripe.com/6oU9AU4Gf1TgftJd67a7C0q" target="_blank" rel="noopener">Choose Platinum <svg><use href="#i-arrow"/></svg></a>
+    <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Platinum%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
+  </div>
+</dialog>
+<dialog class="pkg-modal institutional-m" id="d-institutional" aria-labelledby="d-inst-t">
+  <div class="m-head">
+    <div><div class="name">Institutional partnership</div><h3 id="d-inst-t">What's included</h3></div>
+    <button type="button" class="m-close" aria-label="Close" data-close>&times;</button>
+  </div>
+  <p class="m-lead">For banks, financial institutions, and organizations. Combine these options to fit your institution's goals:</p>
+  <ul class="m-list"><li>Naming of a program block or day (for example, “Day 2 · Activate, with [Your Institution]”).</li><li>Your own panel or talk on products for entrepreneurs, reviewed by the event team.</li><li>A service desk or booth to open accounts or review applications on site.</li><li>Contact list of attendees who give their consent.</li><li>Formal invoicing, purchase orders, and payment by bank transfer.</li></ul>
+  <p class="m-note">Pricing is quoted in the proposal.</p>
+  <div class="m-foot">
+    <a class="btn btn-red" href="mailto:ndiaz@rehobott.com?subject=Institutional%20sponsorship%20proposal%20-%20Despierta%20al%20Capital%202026">Request institutional proposal <svg><use href="#i-arrow"/></svg></a>
+  </div>
+</dialog>
+
 <div class="fab" id="fab">
   <a class="round" href="tel:+16314010564" aria-label="Call Capital Path"><svg><use href="#i-phone"/></svg></a>
   <a class="round" href="mailto:ndiaz@rehobott.com" aria-label="Email Capital Path"><svg><use href="#i-mail"/></svg></a>
@@ -546,6 +671,35 @@ h3{font-size:24px;letter-spacing:.01em}
 <script>
 (function(){
 var ES={
+"Each VIP pass includes access to both days, preferred seating, the VIP networking area, refreshments, and event materials. One person per pass.":"Cada pase VIP incluye acceso a los dos días, asiento preferencial, área de networking VIP, refrigerios y materiales del evento. Una persona por pase.",
+"Social media mentions are published on the Despierta al Capital and Capital Path Instagram and Facebook accounts, with your logo and tag.":"Las menciones se publican en las cuentas de Instagram y Facebook de Despierta al Capital y Capital Path, con tu logo y etiqueta.",
+"What's included":"Qué incluye",
+"Benefit":"Beneficio",
+"What it means":"Qué significa",
+"Close":"Cerrar",
+"Logo on the sponsor banner at the venue.":"Logo en el banner de patrocinadores del recinto.",
+"Logo in the sponsors section of the event website.":"Logo en la sección de patrocinadores de la página web del evento.",
+"1 welcome post before the event and 1 thank-you post after it.":"1 publicación de bienvenida antes del evento y 1 de agradecimiento después.",
+"2 VIP passes for both days.":"2 pases VIP para los dos días.",
+"Venue banner, website, stage screens between sessions, emails to registrants, and the event program.":"Banner del recinto, página web, pantallas del escenario entre sesiones, correos a los registrados y programa del evento.",
+"1 welcome post, 2 during the event (one per day), and 1 thank-you post.":"1 publicación de bienvenida, 2 durante el evento (una por día) y 1 de agradecimiento.",
+"4 VIP passes for both days.":"4 pases VIP para los dos días.",
+"Your brand is mentioned by the host at the opening and closing of each day.":"El presentador menciona tu marca en la apertura y el cierre de cada día.",
+"Everything in Silver, at featured size, in the first row of sponsors and on the photo backdrop.":"Todo lo del paquete Plata, en tamaño destacado, en la primera fila de patrocinadores y en el photocall.",
+"8 VIP passes for both days.":"8 pases VIP para los dos días.",
+"A brand representative joins a panel of about 30 minutes; the topic is agreed with the event team.":"Un representante de tu marca participa en un panel de unos 30 minutos; el tema se acuerda con el equipo del evento.",
+"2 pieces created with your brand (for example, a short video or interview and a carousel), published on the event's social media.":"2 piezas creadas con tu marca (por ejemplo, un video corto o entrevista y un carrusel), publicadas en las redes del evento.",
+"The event is billed as “Despierta al Capital 2026, presented by [Your Brand]” on the website, main backdrop, screens, and event posts.":"El evento aparece como “Despierta al Capital 2026, presentado por [Tu marca]” en la web, el backdrop principal, las pantallas y las publicaciones del evento.",
+"5 minutes of remarks by a brand executive before or after the keynote, plus your logo on screen throughout the session.":"5 minutos de palabras de un ejecutivo de tu marca antes o después de la conferencia principal, y tu logo en pantalla durante toda la sesión.",
+"12 VIP passes for both days, plus up to 10 private 20-minute meetings with attendees who request them.":"12 pases VIP para los dos días y hasta 10 reuniones privadas de 20 minutos con asistentes que lo soliciten.",
+"No other brand from your industry (for example, another bank, if you are a bank) may sponsor at any level or have a commercial presence at the event. The category is defined at signing.":"Ninguna otra marca de tu sector (por ejemplo, otro banco, si eres un banco) podrá patrocinar en ningún nivel ni tener presencia comercial en el evento. La categoría se define al firmar.",
+"Naming of a program block or day (for example, “Day 2 · Activate, with [Your Institution]”).":"Nombramiento de un bloque o día del programa (por ejemplo, “Día 2 · Activar, con [Tu entidad]”).",
+"Your own panel or talk on products for entrepreneurs, reviewed by the event team.":"Panel o charla propia sobre productos para emprendedores, revisada por el equipo del evento.",
+"A service desk or booth to open accounts or review applications on site.":"Stand o mesa de atención para abrir cuentas o evaluar solicitudes en el lugar.",
+"Contact list of attendees who give their consent.":"Base de contactos de los asistentes que den su consentimiento.",
+"Formal invoicing, purchase orders, and payment by bank transfer.":"Facturación formal, orden de compra y pago por transferencia bancaria.",
+"For banks, financial institutions, and organizations. Combine these options to fit your institution's goals:":"Para bancos, entidades financieras y organizaciones. Combina estas opciones según los objetivos de tu entidad:",
+"Pricing is quoted in the proposal.":"El precio se cotiza en la propuesta.",
 "Despierta al Capital — Business Experience 2026 — From Credit to Capital":"Despierta al Capital — Business Experience 2026 — Del crédito al capital",
 "Despierta al Capital, Capital Path and Rehobot":"Despierta al Capital, Capital Path y Rehobot",
 "A business development and access-to-capital experience designed to help entrepreneurs, business owners, and professionals better understand credit, business strategies, and opportunities to access capital.":"Una experiencia de desarrollo empresarial y acceso al capital diseñada para ayudar a emprendedores, empresarios y profesionales a comprender mejor el crédito, las estrategias empresariales y las oportunidades de acceso al capital.",
@@ -631,6 +785,21 @@ document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener
 var q=(location.search.match(/[?&]lang=(en|es)/)||[])[1],saved=null;try{saved=localStorage.getItem('dac-lang')}catch(e){}
 var lang=q||saved||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en');
 if(lang==='es')set('es');document.documentElement.classList.remove('i18n-wait');
+})();
+</script>
+<script>
+(function(){
+  var last=null;
+  function close(d){if(d.open)d.close()}
+  document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){
+    var d=document.getElementById(b.dataset.open);if(!d)return;last=b;
+    if(typeof d.showModal==='function'){d.showModal()}else{d.setAttribute('open','')}
+    document.documentElement.classList.add('modal-open');
+  })});
+  document.querySelectorAll('dialog.pkg-modal').forEach(function(d){
+    d.addEventListener('click',function(e){if(e.target===d||e.target.closest('[data-close]'))close(d)});
+    d.addEventListener('close',function(){document.documentElement.classList.remove('modal-open');if(last)last.focus()});
+  });
 })();
 </script>
 </body>

@@ -187,7 +187,7 @@ h3{font-size:24px;letter-spacing:.01em}
 .secure{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:30px;font-size:14px;color:var(--muted)}
 .secure svg{width:16px;height:16px}
 @media (max-width:1020px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.tiers{grid-template-columns:1fr}.tier.platinum{order:-1}}
+@media (max-width:560px){.tiers{grid-template-columns:1fr}}
 
 /* experience */
 .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:clamp(50px,6vw,70px)}
@@ -482,33 +482,20 @@ html.modal-open{overflow:hidden}
       <p class="lead r">Four ways to put your brand in front of entrepreneurs, business owners, and professionals ready to grow.</p>
     </div>
     <div class="tiers">
-      <article class="tier bronze r">
-        <div class="name">Bronze</div>
-        <div class="price"><sup>$</sup>1,500</div>
+      <article class="tier platinum r">
+        <span class="ribbon">Maximum visibility</span>
+        <div class="name">Platinum</div>
+        <div class="price"><sup>$</sup>15,000</div>
         <div class="per">Sponsorship investment</div>
         <ul>
-          <li>On-site brand presence</li>
-          <li>Logo on selected event materials</li>
-          <li>2 social media mentions</li>
-          <li>2 VIP passes</li>
+          <li>“Presented by” naming recognition for your brand</li>
+          <li>Keynote presence</li>
+          <li>12 VIP passes + B2B agenda</li>
+          <li>Full category exclusivity</li>
         </ul>
-        <a class="btn" href="https://buy.stripe.com/fZu3cwb4D41o95l4zBa7C0n" target="_blank" rel="noopener">Choose Bronze <svg><use href="#i-arrow"/></svg></a>
-        <button type="button" class="details" data-open="d-bronze" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
-        <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Bronze%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
-      </article>
-      <article class="tier silver r">
-        <div class="name">Silver</div>
-        <div class="price"><sup>$</sup>2,500</div>
-        <div class="per">Sponsorship investment</div>
-        <ul>
-          <li>Expanded logo placement across event assets</li>
-          <li>4 social media mentions</li>
-          <li>4 VIP passes</li>
-          <li>On-stage brand recognition</li>
-        </ul>
-        <a class="btn" href="https://buy.stripe.com/8x25kE0pZ1TggxN6HJa7C0o" target="_blank" rel="noopener">Choose Silver <svg><use href="#i-arrow"/></svg></a>
-        <button type="button" class="details" data-open="d-silver" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
-        <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Silver%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
+        <a class="btn" href="https://buy.stripe.com/6oU9AU4Gf1TgftJd67a7C0q" target="_blank" rel="noopener">Choose Platinum <svg><use href="#i-arrow"/></svg></a>
+        <button type="button" class="details" data-open="d-platinum" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
+        <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Platinum%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
       <article class="tier gold r">
         <div class="name">Gold</div>
@@ -524,20 +511,33 @@ html.modal-open{overflow:hidden}
         <button type="button" class="details" data-open="d-gold" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
         <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Gold%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
-      <article class="tier platinum r">
-        <span class="ribbon">Maximum visibility</span>
-        <div class="name">Platinum</div>
-        <div class="price"><sup>$</sup>15,000</div>
+      <article class="tier silver r">
+        <div class="name">Silver</div>
+        <div class="price"><sup>$</sup>2,500</div>
         <div class="per">Sponsorship investment</div>
         <ul>
-          <li>“Presented by” naming recognition for your brand</li>
-          <li>Keynote presence</li>
-          <li>12 VIP passes + B2B agenda</li>
-          <li>Full category exclusivity</li>
+          <li>Expanded logo placement across event assets</li>
+          <li>4 social media mentions</li>
+          <li>4 VIP passes</li>
+          <li>On-stage brand recognition</li>
         </ul>
-        <a class="btn" href="https://buy.stripe.com/6oU9AU4Gf1TgftJd67a7C0q" target="_blank" rel="noopener">Choose Platinum <svg><use href="#i-arrow"/></svg></a>
-        <button type="button" class="details" data-open="d-platinum" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
-        <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Platinum%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
+        <a class="btn" href="https://buy.stripe.com/8x25kE0pZ1TggxN6HJa7C0o" target="_blank" rel="noopener">Choose Silver <svg><use href="#i-arrow"/></svg></a>
+        <button type="button" class="details" data-open="d-silver" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
+        <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Silver%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
+      </article>
+      <article class="tier bronze r">
+        <div class="name">Bronze</div>
+        <div class="price"><sup>$</sup>1,500</div>
+        <div class="per">Sponsorship investment</div>
+        <ul>
+          <li>On-site brand presence</li>
+          <li>Logo on selected event materials</li>
+          <li>2 social media mentions</li>
+          <li>2 VIP passes</li>
+        </ul>
+        <a class="btn" href="https://buy.stripe.com/fZu3cwb4D41o95l4zBa7C0n" target="_blank" rel="noopener">Choose Bronze <svg><use href="#i-arrow"/></svg></a>
+        <button type="button" class="details" data-open="d-bronze" aria-haspopup="dialog">What's included <span aria-hidden="true">+</span></button>
+        <a class="alt" href="mailto:ndiaz@rehobott.com?subject=Bronze%20sponsorship%20-%20Despierta%20al%20Capital%202026">Prefer to talk first? Contact us</a>
       </article>
     </div>
     <div class="institutional r">
